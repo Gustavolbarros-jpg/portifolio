@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Átrio Arquitetura — Arquitetura &amp; Design de Interiores</title>
+<meta name="description" content="Estúdio de arquitetura e design de interiores. Projetos autorais que transformam espaços em experiências. Agende um briefing inicial." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2316150f'/%3E%3Cpath d='M26 74 V34 L50 22 L74 34 V74 M40 74 V52 H60 V74' fill='none' stroke='%23d9d1c3' stroke-width='3.5' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --black:#16150f; --black-2:#1d1c15; --paper:#f7f5f0; --paper-2:#efece4; --beige:#d9d1c3;
+    --stone:#8a857c; --ink:#2a2823; --line:#ddd7cb; --line-d:#39372e;
+    --ff-serif:'Fraunces',serif; --ff-sans:'Archivo',sans-serif; --max:1240px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff-sans);font-weight:400;color:var(--ink);background:var(--paper);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--ff-serif);font-weight:300;line-height:1.08;letter-spacing:-.01em}
+  .label{font-family:var(--ff-sans);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--stone);font-weight:500}
+  .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(22px,5vw,56px)}
+  .btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--ff-sans);font-weight:500;letter-spacing:.16em;text-transform:uppercase;font-size:.76rem;padding:17px 34px;cursor:pointer;border:1px solid var(--ink);color:var(--ink);background:transparent;transition:background .3s,color .3s}
+  .btn:hover{background:var(--ink);color:var(--paper)}
+  .btn-light{border-color:var(--paper);color:var(--paper)}
+  .btn-light:hover{background:var(--paper);color:var(--black)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(247,245,240,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .brand{font-family:var(--ff-serif);font-weight:400;font-size:1.5rem;letter-spacing:.32em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .brand sup{font-family:var(--ff-sans);font-size:.5rem;letter-spacing:.2em;color:var(--stone)}
+  .nav-links{display:flex;gap:38px;align-items:center}
+  .nav-links a{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);transition:color .2s}
+  .nav-links a:hover{color:var(--stone)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);width:46px;height:46px;color:var(--ink);font-size:1.2rem;cursor:pointer}
+
+  /* Hero */
+  .hero{padding-block:clamp(40px,6vw,72px) 0}
+  .hero .top{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:40px}
+  .hero h1{font-size:clamp(2.8rem,8vw,6.4rem);max-width:13ch}
+  .hero h1 em{font-style:italic}
+  .hero .intro{max-width:34ch;color:var(--stone);font-size:1.04rem;padding-bottom:10px}
+  .hero-img{position:relative;aspect-ratio:16/8;overflow:hidden}
+  .hero-img img{width:100%;height:100%;object-fit:cover}
+  .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:0}
+  .hero-meta div{padding:26px 0}
+  .hero-meta b{font-family:var(--ff-serif);font-size:2.4rem;font-weight:300;display:block}
+  .hero-meta span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+
+  section{padding:clamp(70px,10vw,128px) 0}
+  .seclabel{display:flex;align-items:center;gap:16px;margin-bottom:46px}
+  .seclabel::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* Filosofia */
+  .philo .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,80px)}
+  .philo h2{font-size:clamp(1.9rem,4.4vw,3.2rem);max-width:18ch}
+  .philo .body p{color:var(--ink);font-size:1.18rem;margin-bottom:22px;max-width:54ch}
+  .philo .body p:first-child{font-family:var(--ff-serif);font-style:italic;font-size:1.6rem;line-height:1.4;color:var(--ink)}
+  .philo .sign{margin-top:20px;font-family:var(--ff-serif);font-style:italic;font-size:1.3rem;color:var(--stone)}
+
+  /* Portfólio assimétrico */
+  .work{background:var(--paper-2)}
+  .proj{display:grid;gap:clamp(18px,3vw,30px);align-items:center;margin-bottom:clamp(48px,7vw,96px)}
+  .proj.r1{grid-template-columns:1.4fr 1fr}
+  .proj.r2{grid-template-columns:1fr 1.4fr}
+  .proj:last-child{margin-bottom:0}
+  .proj .ph{overflow:hidden}
+  .proj.r1 .ph{aspect-ratio:16/11}
+  .proj.r2 .ph{aspect-ratio:16/11}
+  .proj .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease,filter .6s}
+  .proj:hover .ph img{transform:scale(1.04)}
+  .proj .info .idx{font-family:var(--ff-serif);font-size:1.1rem;color:var(--stone)}
+  .proj .info h3{font-size:clamp(1.8rem,3.4vw,2.6rem);margin:10px 0 14px}
+  .proj .info p{color:var(--stone);max-width:42ch;margin-bottom:18px}
+  .proj .info .specs{display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px}
+  .proj .info .specs div span{display:block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+  .proj .info .specs div b{font-family:var(--ff-serif);font-weight:400;font-size:1.2rem}
+
+  /* Processo */
+  .proc .seclabel{margin-bottom:60px}
+  .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .pstep{padding:36px 28px 36px 0;border-top:1px solid var(--ink)}
+  .pstep .n{font-family:var(--ff-serif);font-size:3.4rem;font-weight:300;line-height:1;margin-bottom:20px}
+  .pstep h3{font-size:1.4rem;margin-bottom:10px}
+  .pstep p{color:var(--stone);font-size:.96rem}
+
+  /* Depoimentos */
+  .quotes{background:var(--black);color:var(--paper)}
+  .quotes .seclabel::after{background:var(--line-d)}
+  .quotes .label{color:var(--beige)}
+  .q-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-d);border:1px solid var(--line-d)}
+  .qcell{background:var(--black);padding:clamp(34px,5vw,56px)}
+  .qcell .quote{font-family:var(--ff-serif);font-weight:300;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.4;font-style:italic}
+  .qcell .who{margin-top:28px;display:flex;align-items:center;gap:14px}
+  .qcell .who .ln{width:30px;height:1px;background:var(--beige)}
+  .qcell .who b{font-family:var(--ff-sans);font-weight:500;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+  .qcell .who span{color:var(--stone);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+
+  /* Final */
+  .final{position:relative;color:var(--paper);text-align:center;
+    background:linear-gradient(rgba(22,21,15,.6),rgba(22,21,15,.75)),url("https://picsum.photos/seed/architecture-interior/1600/900") center/cover;}
+  .final .label{color:var(--beige)}
+  .final h2{font-size:clamp(2.4rem,6vw,4.6rem);max-width:16ch;margin:22px auto 0}
+  .final h2 em{font-style:italic}
+  .final p{color:rgba(247,245,240,.82);max-width:48ch;margin:22px auto 0;font-size:1.1rem}
+  .final .btn{margin-top:38px}
+
+  footer{background:var(--black-2);color:var(--beige);padding:64px 0 30px}
+  .foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+  .foot .brand{font-family:var(--ff-serif);font-size:1.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--paper);margin-bottom:14px}
+  .foot p{color:var(--stone);font-size:.92rem;max-width:36ch}
+  .foot h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);margin-bottom:16px}
+  .foot a{display:block;color:var(--beige);font-size:.92rem;margin-bottom:10px}.foot a:hover{color:var(--paper)}
+  .disc{border-top:1px solid var(--line-d);margin-top:46px;padding-top:24px;font-size:.78rem;color:var(--stone);letter-spacing:.02em}
+
+  @media(max-width:900px){.philo .wrap{grid-template-columns:1fr}.proc-grid{grid-template-columns:1fr 1fr}.q-grid{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr}}
+  @media(max-width:680px){
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:84px;left:0;right:0;flex-direction:column;background:var(--paper);padding:22px 26px;gap:18px;border-bottom:1px solid var(--line)}
+    .menu-btn{display:grid;place-items:center}
+    .hero .top{grid-template-columns:1fr}
+    .hero-meta{grid-template-columns:1fr 1fr}
+    .proj.r1,.proj.r2{grid-template-columns:1fr}
+    .proj.r2 .ph{order:-1}
+    .proc-grid{grid-template-columns:1fr}
+    .foot{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="brand">Átrio <sup>arquitetura</sup></a>
+    <nav class="nav-links" id="nav">
+      <a href="#filosofia">Filosofia</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#processo">Processo</a>
+      <a href="#depoimentos">Clientes</a>
+      <a href="#briefing">Briefing</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="top">
+        <h1>Espaços que contam <em>histórias</em>.</h1>
+        <p class="intro">Estúdio de arquitetura e design de interiores autoral. Transformamos metros quadrados em experiências de morar e viver.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="hero-img"><img src="https://picsum.photos/seed/archhero/1600/800" alt="Projeto autoral do estúdio Átrio" /></div>
+      <div class="hero-meta">
+        <div><b>15</b><span>anos de estúdio</span></div>
+        <div><b>120+</b><span>projetos entregues</span></div>
+        <div><b>9</b><span>prêmios &amp; menções</span></div>
+        <div><b>∞</b><span>histórias contadas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILOSOFIA -->
+  <section class="philo" id="filosofia">
+    <div class="wrap">
+      <div>
+        <div class="seclabel"><span class="label">01 — Filosofia</span></div>
+        <h2>Cada projeto começa por uma pergunta: como você quer viver aqui?</h2>
+      </div>
+      <div class="body">
+        <p>Acreditamos que arquitetura não é sobre tendências. É sobre tempo, luz, matéria e a vida que acontece entre as paredes.</p>
+        <p>No Átrio, partimos da escuta. Entendemos a rotina, os silêncios e os encontros que cada espaço precisa abrigar — e só então desenhamos. O resultado é uma arquitetura atemporal, feita para envelhecer com beleza junto de quem a habita.</p>
+        <p>Trabalhamos com materiais honestos, proporções cuidadas e luz natural como protagonista. Menos excesso, mais essência.</p>
+        <div class="sign">— Estúdio Átrio</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="work" id="projetos">
+    <div class="wrap">
+      <div class="seclabel"><span class="label">02 — Projetos selecionados</span></div>
+
+      <article class="proj r1">
+        <div class="ph"><img src="https://picsum.photos/seed/proj-casa-luz/900/640" alt="Casa Luz" loading="lazy"></div>
+        <div class="info">
+          <div class="idx">01 / 04</div>
+          <h3>Casa Luz</h3>
+          <p>Uma residência que respira. Pé-direito duplo, brises de madeira e um pátio interno que leva o sol ao coração da casa.</p>
+          <div class="specs">
+            <div><span>Tipologia</span><b>Residencial</b></div>
+            <div><span>Área</span><b>340 m²</b></div>
+            <div><span>Ano</span><b>2023</b></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj r2">
+        <div class="info">
+          <div class="idx">02 / 04</div>
+          <h3>Apto. Travessia</h3>
+          <p>Reforma de um apartamento dos anos 70. Plantas integradas, paleta de pedra e madeira, e marcenaria sob medida que organiza sem pesar.</p>
+          <div class="specs">
+            <div><span>Tipologia</span><b>Interiores</b></div>
+            <div><span>Área</span><b>110 m²</b></div>
+            <div><span>Ano</span><b>2022</b></div>
+          </div>
+        </div>
+        <div class="ph"><img src="https://picsum.photos/seed/proj-travessia/900/640" alt="Apartamento Travessia" loading="lazy"></div>
+      </article>
+
+      <article class="proj r1">
+        <div class="ph"><img src="https://picsum.photos/seed/proj-cafe/900/640" alt="Café Matéria" loading="lazy"></div>
+        <div class="info">
+          <div class="idx">03 / 04</div>
+          <h3>Café Matéria</h3>
+          <p>Um café-conceito em concreto aparente e linho. Iluminação cênica e mobiliário autoral criam uma atmosfera que convida a ficar.</p>
+          <div class="specs">
+            <div><span>Tipologia</span><b>Comercial</b></div>
+            <div><span>Área</span><b>85 m²</b></div>
+            <div><span>Ano</span><b>2024</b></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj r2">
+        <div class="info">
+          <div class="idx">04 / 04</div>
+          <h3>Refúgio Serra</h3>
+          <p>Casa de campo integrada à paisagem. Estrutura em madeira, grandes vãos de vidro e a montanha como cenário permanente.</p>
+          <div class="specs">
+            <div><span>Tipologia</span><b>Residencial</b></div>
+            <div><span>Área</span><b>260 m²</b></div>
+            <div><span>Ano</span><b>2021</b></div>
+          </div>
+        </div>
+        <div class="ph"><img src="https://picsum.photos/seed/proj-serra/900/640" alt="Refúgio Serra" loading="lazy"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="proc" id="processo">
+    <div class="wrap">
+      <div class="seclabel"><span class="label">03 — Como trabalhamos</span></div>
+      <div class="proc-grid">
+        <div class="pstep"><div class="n">01</div><h3>Escuta</h3><p>Conversa e briefing para entender desejos, rotina, orçamento e o sonho por trás do projeto.</p></div>
+        <div class="pstep"><div class="n">02</div><h3>Conceito</h3><p>Estudo preliminar, partido arquitetônico e a narrativa que vai guiar cada decisão.</p></div>
+        <div class="pstep"><div class="n">03</div><h3>Projeto</h3><p>Detalhamento técnico, materiais, marcenaria, iluminação e compatibilização completa.</p></div>
+        <div class="pstep"><div class="n">04</div><h3>Obra</h3><p>Acompanhamento de execução para que o desenhado se torne realidade no detalhe.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="quotes" id="depoimentos">
+    <div class="wrap">
+      <div class="seclabel"><span class="label">04 — Clientes</span></div>
+      <div class="q-grid">
+        <div class="qcell">
+          <div class="quote">“Eles entenderam a nossa família melhor do que nós mesmos. A casa parece que sempre foi assim.”</div>
+          <div class="who"><span class="ln"></span><span><b>Família Andrade</b><br><span>Casa Luz</span></span></div>
+        </div>
+        <div class="qcell">
+          <div class="quote">“Cada detalhe tem intenção. Receber o projeto pronto foi como receber um retrato de quem somos.”</div>
+          <div class="who"><span class="ln"></span><span><b>Marina &amp; Felipe</b><br><span>Apto. Travessia</span></span></div>
+        </div>
+        <div class="qcell">
+          <div class="quote">“Transformaram um espaço comercial difícil numa experiência. Meus clientes não querem ir embora.”</div>
+          <div class="who"><span class="ln"></span><span><b>Café Matéria</b><br><span>Projeto comercial</span></span></div>
+        </div>
+        <div class="qcell">
+          <div class="quote">“Profissionalismo do primeiro croqui à última obra. Atemporal é a palavra certa para o trabalho deles.”</div>
+          <div class="who"><span class="ln"></span><span><b>Sr. e Sra. Vasconcelos</b><br><span>Refúgio Serra</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final" id="briefing">
+    <div class="wrap">
+      <span class="label">Vamos começar</span>
+      <h2>Conte-nos o espaço que você <em>imagina</em>.</h2>
+      <p>Toda grande arquitetura começa por uma conversa. Agende um briefing inicial e vamos desenhar, juntos, a sua próxima história.</p>
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Estúdio%20Átrio.%20Gostaria%20de%20agendar%20um%20briefing%20inicial." target="_blank" rel="noopener" class="btn btn-light">Agendar briefing inicial</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand">Átrio</div>
+        <p>Estúdio de arquitetura e design de interiores. Projetos autorais e atemporais que transformam espaços em experiências.</p>
+      </div>
+      <div>
+        <h4>Estúdio</h4>
+        <a href="#filosofia">Filosofia</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#processo">Processo</a>
+        <a href="#depoimentos">Clientes</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp (00) 00000-0000</a>
+        <a href="mailto:contato@atrioarquitetura.com.br">contato@atrioarquitetura.com.br</a>
+        <a href="#">@atrio.arquitetura</a>
+        <a href="#">Rua do Projeto, 45 · Cidade Fictícia · UF</a>
+      </div>
+    </div>
+    <div class="disc">Conteúdo demonstrativo e fictício, criado para fins de portfólio. Nome do estúdio, projetos, áreas, prêmios, depoimentos e dados de contato são ilustrativos e não representam escritórios, obras ou pessoas reais.</div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+</script>
+</body>
+</html>

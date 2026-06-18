@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Espaço Sereno — Psicologia e terapia com acolhimento</title>
+<meta name="description" content="Um espaço seguro para você se cuidar. Terapia online e presencial com escuta acolhedora, sem julgamentos. Agende uma conversa inicial." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%237a9b86'/%3E%3Cpath d='M50 74 C30 60 26 44 36 36 c6-5 12-2 14 4 c2-6 8-9 14-4 c10 8 6 24 -14 38 Z' fill='%23f7f9f6'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --sage:#7a9b86; --sage-d:#5e8270; --sage-l:#e4ede7; --sky:#cfe0e6; --sky-l:#eaf3f5;
+    --cream:#f7f9f6; --paper:#fdfefc; --ink:#3a4d44; --soft:#6f8579; --line:#e2ebe5;
+    --ff-round:'Quicksand',sans-serif; --ff-body:'Nunito Sans',sans-serif; --max:1080px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff-body);color:var(--ink);background:var(--paper);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--ff-round);font-weight:600;line-height:1.25;letter-spacing:-.01em}
+  .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(22px,5vw,46px)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-round);font-weight:600;border-radius:999px;padding:15px 30px;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:transform .2s,background .25s,color .25s}
+  .btn-sage{background:var(--sage);color:#fff;box-shadow:0 12px 28px -12px rgba(94,130,112,.7)}
+  .btn-sage:hover{background:var(--sage-d);transform:translateY(-2px)}
+  .btn-soft{background:#fff;border-color:var(--line);color:var(--sage-d)}
+  .btn-soft:hover{border-color:var(--sage);transform:translateY(-2px)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(253,254,252,.88);backdrop-filter:blur(10px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--ff-round);font-weight:700;font-size:1.25rem;color:var(--sage-d)}
+  .brand .mk{width:38px;height:38px;border-radius:50%;background:var(--sage-l);display:grid;place-items:center;font-size:1.1rem}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{color:var(--soft);font-family:var(--ff-round);font-weight:500;font-size:.96rem;transition:color .2s}
+  .nav-links a:hover{color:var(--sage-d)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:999px;width:44px;height:44px;color:var(--sage-d);font-size:1.2rem;cursor:pointer}
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,var(--sky-l),var(--cream));position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,60px);align-items:center;padding-block:clamp(64px,9vw,108px)}
+  .hero .eyebrow{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--sage-d);font-family:var(--ff-round);font-weight:600;font-size:.84rem;padding:8px 18px;border-radius:999px;margin-bottom:24px}
+  .hero h1{font-size:clamp(2.3rem,5.3vw,3.7rem);max-width:16ch;color:var(--ink)}
+  .hero p{font-size:1.18rem;color:var(--soft);margin-top:22px;max-width:46ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+  .hero-note{margin-top:22px;color:var(--soft);font-size:.94rem;display:flex;align-items:center;gap:9px}
+  .hero-figure{position:relative}
+  .hero-figure .img{aspect-ratio:1;border-radius:50% 50% 46% 54% / 54% 50% 50% 46%;overflow:hidden;box-shadow:0 30px 60px -30px rgba(94,130,112,.55)}
+  .hero-figure img{width:100%;height:100%;object-fit:cover}
+  .blob{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(122,155,134,.2),transparent 70%);pointer-events:none}
+
+  section{padding:clamp(64px,9vw,112px) 0}
+  .head{max-width:58ch;margin-bottom:52px}
+  .head.center{text-align:center;margin-inline:auto}
+  .head .kicker{font-family:var(--ff-round);font-weight:600;color:var(--sage);letter-spacing:.04em;font-size:.95rem;margin-bottom:14px}
+  .head h2{font-size:clamp(1.9rem,4.4vw,2.9rem);color:var(--ink)}
+  .head p{color:var(--soft);font-size:1.12rem;margin-top:16px}
+
+  /* Validação */
+  .feel{background:var(--sage-l)}
+  .feel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+  .feel-card{background:var(--paper);border-radius:22px;padding:30px 28px;border:1px solid var(--line)}
+  .feel-card .ic{font-size:1.7rem;margin-bottom:12px}
+  .feel-card p{color:var(--ink);font-size:1.06rem;font-weight:500}
+  .feel-foot{text-align:center;margin-top:40px;font-family:var(--ff-round);font-weight:600;font-size:1.3rem;color:var(--sage-d)}
+
+  /* Como funciona */
+  .how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+  .how{padding:8px}
+  .how .num{width:52px;height:52px;border-radius:50%;background:var(--sky-l);border:2px solid var(--sky);color:var(--sage-d);display:grid;place-items:center;font-family:var(--ff-round);font-weight:700;font-size:1.2rem;margin-bottom:18px}
+  .how h3{font-size:1.3rem;margin-bottom:8px}
+  .how p{color:var(--soft);font-size:1rem}
+
+  /* Abordagem */
+  .appr{background:var(--sky-l)}
+  .appr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .appr-card{background:var(--paper);border-radius:22px;padding:30px;border:1px solid var(--line)}
+  .appr-card .ic{width:54px;height:54px;border-radius:16px;background:var(--sage-l);display:grid;place-items:center;font-size:1.5rem;margin-bottom:16px}
+  .appr-card h3{font-size:1.25rem;margin-bottom:8px;color:var(--sage-d)}
+  .appr-card p{color:var(--soft);font-size:.99rem}
+
+  /* Sobre */
+  .about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(34px,6vw,64px);align-items:center}
+  .about-photo{aspect-ratio:4/5;border-radius:30px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(94,130,112,.45)}
+  .about-photo img{width:100%;height:100%;object-fit:cover}
+  .about h2{font-size:clamp(1.9rem,4.4vw,2.8rem);color:var(--ink)}
+  .about p{color:var(--soft);margin-top:18px;font-size:1.08rem}
+  .about .creds{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:12px}
+  .about .creds li{display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
+  .about .creds .ck{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--sage-l);color:var(--sage-d);display:grid;place-items:center;font-size:.8rem;margin-top:4px}
+  .crp{margin-top:22px;display:inline-block;background:var(--sage-l);color:var(--sage-d);font-family:var(--ff-round);font-weight:600;padding:8px 18px;border-radius:999px;font-size:.9rem}
+
+  /* Sigilo */
+  .safe{background:var(--sage);color:#fff}
+  .safe .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,5vw,56px);align-items:center}
+  .safe h2{color:#fff;font-size:clamp(1.9rem,4.4vw,2.8rem)}
+  .safe>.wrap>div>p{color:rgba(255,255,255,.88);margin-top:14px;font-size:1.08rem}
+  .safe-list{list-style:none;display:flex;flex-direction:column;gap:16px}
+  .safe-list li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start}
+  .safe-list .ic{font-size:1.4rem;flex:0 0 auto}
+  .safe-list b{font-family:var(--ff-round);display:block;margin-bottom:2px}
+  .safe-list span{color:rgba(255,255,255,.85);font-size:.96rem}
+
+  /* FAQ */
+  .faq-list{max-width:780px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+  .acc{background:var(--cream);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .acc summary{list-style:none;cursor:pointer;padding:22px 26px;display:flex;justify-content:space-between;gap:14px;align-items:center;font-family:var(--ff-round);font-weight:600;font-size:1.1rem;color:var(--ink)}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc .plus{color:var(--sage);font-size:1.4rem;transition:transform .25s}
+  .acc[open] .plus{transform:rotate(45deg)}
+  .acc .body{padding:0 26px 24px;color:var(--soft)}
+
+  /* Final */
+  .final{text-align:center;background:linear-gradient(180deg,var(--cream),var(--sky-l))}
+  .final .card{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:clamp(40px,6vw,68px);box-shadow:0 30px 70px -36px rgba(94,130,112,.4)}
+  .final h2{font-size:clamp(2rem,4.6vw,3rem);max-width:20ch;margin-inline:auto;color:var(--ink)}
+  .final p{color:var(--soft);max-width:48ch;margin:16px auto 0;font-size:1.12rem}
+  .final .btn{margin-top:28px}
+  .final small{display:block;margin-top:18px;color:var(--soft)}
+
+  footer{background:var(--ink);color:#c5d2cb;padding:50px 0 28px}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+  .foot b.brand{font-family:var(--ff-round);color:#fff;font-size:1.3rem;display:block;margin-bottom:8px}
+  .foot h4{color:#fff;font-family:var(--ff-round);font-size:.95rem;margin-bottom:12px}
+  .foot a,.foot p{color:#c5d2cb;font-size:.94rem;display:block;margin-bottom:8px}.foot a:hover{color:#fff}
+  .disc{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;font-size:.82rem;color:#8fa399}
+
+  .wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(37,211,102,.7);transition:transform .2s}
+  .wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
+
+  @media(max-width:840px){.hero .wrap,.about .wrap,.safe .wrap{grid-template-columns:1fr}.hero-figure,.about-photo{max-width:400px;margin-inline:auto}.hero-figure{order:-1}.foot{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.nav-links{display:none}.nav-links.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;background:var(--paper);padding:18px 26px;gap:16px;border-bottom:1px solid var(--line)}.menu-btn{display:grid;place-items:center}.foot{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="brand"><span class="mk">🌿</span> Espaço Sereno</a>
+    <nav class="nav-links" id="nav">
+      <a href="#sentimentos">Você não está só</a>
+      <a href="#como">Como funciona</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#agendar" class="btn btn-sage" style="padding:11px 22px;font-size:.92rem">Agendar conversa</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blob" style="width:360px;height:360px;top:-100px;left:-80px"></div>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">🤍 Um espaço seguro para você</span>
+        <h1>Cuidar de você também é um ato de coragem.</h1>
+        <p>Aqui você encontra um lugar tranquilo para falar, ser ouvido e se entender melhor — no seu tempo, sem pressa e sem julgamentos.</p>
+        <div class="hero-cta">
+          <a href="#agendar" class="btn btn-sage">Agendar uma conversa inicial</a>
+          <a href="#como" class="btn btn-soft">Como funciona</a>
+        </div>
+        <div class="hero-note">🔒 Atendimento online e presencial · Sigilo garantido</div>
+      </div>
+      <div class="hero-figure">
+        <div class="img"><img src="https://picsum.photos/seed/calmnature/700/700" alt="Ambiente calmo e acolhedor" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALIDAÇÃO -->
+  <section class="feel" id="sentimentos">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Você não está sozinho nisso</div>
+        <h2>Talvez você ande se sentindo assim</h2>
+        <p>E está tudo bem sentir. Reconhecer é o primeiro passo — e você não precisa dar esse passo sozinho.</p>
+      </div>
+      <div class="feel-grid">
+        <div class="feel-card"><div class="ic">😮‍💨</div><p>Uma ansiedade que não passa, mesmo quando &ldquo;está tudo bem&rdquo;.</p></div>
+        <div class="feel-card"><div class="ic">🪫</div><p>Cansaço e sobrecarga que o descanso não dá conta de aliviar.</p></div>
+        <div class="feel-card"><div class="ic">🌧️</div><p>Uma tristeza ou desânimo que você nem sabe explicar de onde vem.</p></div>
+        <div class="feel-card"><div class="ic">🔁</div><p>A sensação de estar repetindo os mesmos padrões e não conseguir sair deles.</p></div>
+      </div>
+      <div class="feel-foot">Seja qual for o seu motivo, ele é válido. 🤍</div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Sem mistério</div>
+        <h2>Como funciona a terapia comigo</h2>
+      </div>
+      <div class="how-grid">
+        <div class="how"><div class="num">1</div><h3>Primeiro contato</h3><p>Você manda uma mensagem e marcamos uma conversa inicial, sem compromisso, para nos conhecermos.</p></div>
+        <div class="how"><div class="num">2</div><h3>Conversa inicial</h3><p>Um momento tranquilo para você falar do que te traz aqui e tirar dúvidas sobre o processo.</p></div>
+        <div class="how"><div class="num">3</div><h3>Sessões no seu ritmo</h3><p>Encontros semanais (online ou presenciais), num espaço só seu, conduzidos com cuidado.</p></div>
+        <div class="how"><div class="num">4</div><h3>Caminho juntos</h3><p>Aos poucos, você se entende melhor e desenvolve novas formas de lidar com o que sente.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABORDAGEM -->
+  <section class="appr" id="abordagem">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Como eu trabalho</div>
+        <h2>Abordagem e temas que acompanho</h2>
+      </div>
+      <div class="appr-grid">
+        <div class="appr-card"><div class="ic">💬</div><h3>Ansiedade e estresse</h3><p>Para quem convive com preocupação constante, crises ou excesso de cobrança.</p></div>
+        <div class="appr-card"><div class="ic">🌗</div><h3>Autoconhecimento</h3><p>Para entender seus padrões, suas emoções e o que move as suas escolhas.</p></div>
+        <div class="appr-card"><div class="ic">🤝</div><h3>Relacionamentos</h3><p>Para cuidar de vínculos, limites e da forma como você se relaciona com os outros e consigo.</p></div>
+        <div class="appr-card"><div class="ic">🌱</div><h3>Momentos de transição</h3><p>Para atravessar mudanças, lutos e recomeços com mais apoio e clareza.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="wrap">
+      <div class="about-photo"><img src="https://picsum.photos/seed/psychologist/640/800" alt="Retrato da psicóloga" loading="lazy" /></div>
+      <div>
+        <div class="kicker" style="font-family:var(--ff-round);font-weight:600;color:var(--sage);font-size:.95rem;margin-bottom:14px">Quem vai te acompanhar</div>
+        <h2>Oi, eu sou a Helena</h2>
+        <p>Sou psicóloga e acredito que todo mundo merece um espaço para ser ouvido de verdade. Meu trabalho é caminhar ao seu lado, com escuta atenta e sem julgamentos, respeitando o seu tempo e a sua história.</p>
+        <ul class="creds">
+          <li><span class="ck">✓</span> Graduação em Psicologia e formação clínica continuada.</li>
+          <li><span class="ck">✓</span> Atendimento a adultos, online e presencial.</li>
+          <li><span class="ck">✓</span> Postura acolhedora, ética e livre de julgamentos.</li>
+        </ul>
+        <span class="crp">CRP 00/00000 (registro fictício)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGILO -->
+  <section class="safe">
+    <div class="wrap">
+      <div>
+        <div class="kicker" style="font-family:var(--ff-round);font-weight:600;color:rgba(255,255,255,.85);font-size:.95rem;margin-bottom:14px">Seu cuidado, em segurança</div>
+        <h2>Um espaço protegido em todos os sentidos</h2>
+        <p>Buscar terapia exige confiança. Por isso, o sigilo e a sua segurança vêm em primeiro lugar, sempre.</p>
+      </div>
+      <ul class="safe-list">
+        <li><span class="ic">🔒</span><div><b>Sigilo absoluto</b><span>Tudo o que você compartilha é protegido pelo sigilo profissional. É um compromisso ético inegociável.</span></div></li>
+        <li><span class="ic">💻</span><div><b>Atendimento online seguro</b><span>Sessões por plataforma com privacidade, de onde você estiver, com o mesmo cuidado do presencial.</span></div></li>
+        <li><span class="ic">🕊️</span><div><b>Sem julgamentos</b><span>Aqui não existe assunto bobo nem sentimento errado. Esse espaço é seu.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="head center"><div class="kicker">Dúvidas comuns</div><h2>Para você se sentir à vontade</h2></div>
+      <div class="faq-list">
+        <details class="acc" open><summary>Nunca fiz terapia. Como começo? <span class="plus">+</span></summary><div class="body">Da forma mais simples possível: você envia uma mensagem e marcamos uma conversa inicial. Não precisa preparar nada nem saber explicar tudo. É só chegar.</div></details>
+        <details class="acc"><summary>Atende online? Funciona mesmo? <span class="plus">+</span></summary><div class="body">Sim. A terapia online tem a mesma eficácia da presencial para a maioria das pessoas, com a vantagem da comodidade. Você só precisa de um lugar tranquilo e privado.</div></details>
+        <details class="acc"><summary>Com que frequência são as sessões? <span class="plus">+</span></summary><div class="body">Normalmente semanais, com cerca de 50 minutos cada. A frequência pode ser ajustada conforme a sua necessidade e o seu momento.</div></details>
+        <details class="acc"><summary>O que eu falo fica entre nós? <span class="plus">+</span></summary><div class="body">Sim, totalmente. O sigilo é um princípio fundamental da profissão e um compromisso meu com você.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final" id="agendar">
+    <div class="wrap">
+      <div class="card">
+        <h2>Que tal dar o primeiro passo hoje?</h2>
+        <p>Sem compromisso e sem pressa. Vamos conversar e ver, juntos, como eu posso te ajudar.</p>
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Helena.%20Gostaria%20de%20agendar%20uma%20conversa%20inicial." target="_blank" rel="noopener" class="btn btn-sage">Agendar uma conversa inicial</a>
+        <small>Você merece esse cuidado. 🤍</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <b class="brand">🌿 Espaço Sereno</b>
+        <p>Psicologia e terapia com acolhimento. Atendimento online e presencial.</p>
+        <p>Rua Tranquila, 80 · Sala 4<br>Cidade Fictícia · UF</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="#sentimentos">Você não está só</a>
+        <a href="#como">Como funciona</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#faq">Dúvidas</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp (00) 00000-0000</a>
+        <a href="mailto:contato@espacosereno.com.br">contato@espacosereno.com.br</a>
+        <a href="#">@espaco.sereno.psi</a>
+      </div>
+    </div>
+    <div class="disc">Conteúdo demonstrativo e fictício, criado para fins de portfólio. Nome, CRP, depoimentos e dados de contato são ilustrativos e não representam profissionais ou pessoas reais. Esta página não substitui avaliação ou acompanhamento psicológico real.</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Helena.%20Gostaria%20de%20agendar%20uma%20conversa%20inicial." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.9 6.5L3 29l7.2-2.3c1.8 1 3.7 1.5 5.8 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.3 1.3 1.4-4.1-.3-.4c-1-1.6-1.6-3.4-1.6-5.3 0-5.6 4.5-10.1 10.1-10.1 5.6 0 10.1 4.5 10.1 10.1S21.6 25.6 16 25.6zm5.5-7.6c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  document.querySelectorAll('.acc').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.acc').forEach(o=>{if(o!==d)o.open=false})}));
+</script>
+</body>
+</html>

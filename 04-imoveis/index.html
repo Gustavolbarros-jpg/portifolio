@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Horizonte Imóveis — Avaliação gratuita do seu imóvel</title>
+<meta name="description" content="Descubra quanto vale o seu imóvel hoje, sem custo e sem compromisso. Avaliação profissional, fotos que vendem e estratégia para vender mais rápido e pelo melhor preço." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230e3a5f'/%3E%3Cpath d='M20 52 L50 26 L80 52 M28 48 V76 H72 V48' fill='none' stroke='%23f4a23b' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --blue:#0e3a5f; --blue-2:#13507e; --blue-d:#0a2c47; --sky:#e8f1f8; --gray:#64748b;
+    --orange:#f4a23b; --orange-d:#e08a1e; --ink:#16222e; --paper:#ffffff; --soft:#f5f8fb; --line:#dde7ef;
+    --ff-serif:'DM Serif Display',serif; --ff-sans:'Manrope',sans-serif; --max:1160px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff-sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--ff-serif);font-weight:400;line-height:1.12}
+  .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(20px,5vw,44px)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--ff-sans);font-weight:700;border-radius:10px;padding:15px 28px;font-size:1rem;cursor:pointer;border:2px solid transparent;transition:transform .15s,background .2s,box-shadow .2s}
+  .btn-orange{background:var(--orange);color:var(--blue-d);box-shadow:0 10px 26px -10px rgba(244,162,59,.7)}
+  .btn-orange:hover{background:var(--orange-d);transform:translateY(-2px)}
+  .btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blue-2);transform:translateY(-2px)}
+  .btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--ff-serif);font-size:1.35rem;color:var(--blue)}
+  .brand .mk{width:38px;height:38px;border-radius:9px;background:var(--blue);display:grid;place-items:center}
+  .brand .mk svg{width:22px;height:22px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--gray);font-weight:600;font-size:.94rem;transition:color .2s}
+  .nav-links a:hover{color:var(--blue)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;color:var(--blue);font-size:1.3rem;cursor:pointer}
+
+  /* Hero */
+  .hero{position:relative;background:
+      linear-gradient(110deg,rgba(10,44,71,.95) 42%,rgba(14,58,94,.7)),
+      url("https://picsum.photos/seed/modernhouse/1600/1000") center/cover;color:#fff}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,56px);align-items:center;padding-block:clamp(56px,8vw,92px)}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(244,162,59,.16);border:1px solid rgba(244,162,59,.45);color:var(--orange);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:7px 15px;border-radius:999px;margin-bottom:22px}
+  .hero h1{font-size:clamp(2.3rem,5.3vw,3.9rem);max-width:16ch}
+  .hero h1 .o{color:var(--orange)}
+  .hero p{color:#cdddea;font-size:clamp(1.05rem,2.2vw,1.25rem);max-width:46ch;margin-top:20px}
+  .hero ul{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:11px}
+  .hero ul li{display:flex;gap:11px;align-items:center;font-weight:600}
+  .hero ul li::before{content:"✓";background:var(--orange);color:var(--blue-d);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:.85rem;flex:0 0 auto}
+
+  /* Form card */
+  .leadcard{background:#fff;color:var(--ink);border-radius:18px;padding:30px 30px 32px;box-shadow:0 30px 70px -28px rgba(0,0,0,.55)}
+  .leadcard h3{font-family:var(--ff-serif);font-size:1.7rem;color:var(--blue);margin-bottom:4px}
+  .leadcard .sub{color:var(--gray);font-size:.94rem;margin-bottom:20px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.82rem;font-weight:700;color:var(--blue);margin-bottom:6px}
+  .field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;font-family:var(--ff-sans);font-size:.97rem;background:var(--soft);transition:border-color .2s,background .2s}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--orange);background:#fff}
+  .leadcard .btn{width:100%;margin-top:6px}
+  .leadcard .privacy{font-size:.78rem;color:var(--gray);text-align:center;margin-top:12px}
+  .ok{display:none;text-align:center;padding:20px 6px}
+  .ok.show{display:block}
+  .ok .ic{width:62px;height:62px;border-radius:50%;background:#e6f6ec;color:#1a9e54;display:grid;place-items:center;font-size:1.8rem;margin:0 auto 14px}
+  .ok h3{color:var(--blue)}.ok p{color:var(--gray);margin-top:6px}
+
+  section{padding:clamp(56px,8vw,92px) 0}
+  .head{max-width:60ch;margin-bottom:46px}
+  .head.center{text-align:center;margin-inline:auto}
+  .head .kicker{color:var(--orange-d);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;margin-bottom:12px}
+  .head h2{font-size:clamp(1.9rem,4.5vw,3rem);color:var(--blue)}
+  .head p{color:var(--gray);font-size:1.08rem;margin-top:14px}
+
+  /* Bullets / como funciona */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px}
+  .scard{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:30px 26px;position:relative}
+  .scard .n{font-family:var(--ff-serif);font-size:2.4rem;color:var(--orange);line-height:1}
+  .scard h3{font-family:var(--ff-serif);font-size:1.4rem;color:var(--blue);margin:8px 0 8px}
+  .scard p{color:var(--gray);font-size:.97rem}
+
+  /* Diferenciais (faixa azul) */
+  .why{background:var(--blue);color:#fff}
+  .why .head h2,.why .head .kicker{color:#fff}.why .head .kicker{color:var(--orange)}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+  .why-item{padding:8px}
+  .why-item .ic{font-size:1.9rem;margin-bottom:12px}
+  .why-item h3{font-family:var(--ff-serif);font-size:1.35rem;color:#fff;margin-bottom:8px}
+  .why-item p{color:#bcd2e3;font-size:.97rem}
+  .why-stats{display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,56px);margin-top:50px;padding-top:32px;border-top:1px solid rgba(255,255,255,.18)}
+  .why-stats .s b{font-family:var(--ff-serif);font-size:2.4rem;color:var(--orange);display:block}
+  .why-stats .s span{color:#bcd2e3;font-size:.92rem}
+
+  /* Galeria */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:160px;gap:14px}
+  .gallery a{position:relative;border-radius:12px;overflow:hidden;display:block}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .gallery a:hover img{transform:scale(1.06)}
+  .gallery a .lbl{position:absolute;bottom:10px;left:12px;color:#fff;font-weight:700;font-size:.9rem;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+  .gallery a:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .gallery a:nth-child(6){grid-column:span 2}
+
+  /* Depoimentos */
+  .test{background:var(--soft)}
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 28px;box-shadow:0 14px 30px -22px rgba(14,58,94,.4)}
+  .tcard .stars{color:var(--orange);letter-spacing:2px;margin-bottom:10px}
+  .tcard p{font-size:1rem}
+  .tcard .who{display:flex;align-items:center;gap:12px;margin-top:16px}
+  .tcard .who img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+  .tcard .who b{color:var(--blue);font-weight:700}
+  .tcard .who span{color:var(--gray);font-size:.84rem}
+
+  /* CTA urgência */
+  .final{background:linear-gradient(120deg,var(--blue),var(--blue-2));color:#fff;text-align:center}
+  .final h2{font-size:clamp(2rem,4.8vw,3.2rem);max-width:20ch;margin-inline:auto;color:#fff}
+  .final p{color:#cdddea;max-width:50ch;margin:16px auto 0;font-size:1.1rem}
+  .urg{display:inline-flex;align-items:center;gap:10px;background:rgba(244,162,59,.16);border:1px solid rgba(244,162,59,.45);color:var(--orange);font-weight:700;padding:9px 18px;border-radius:999px;margin-top:24px}
+  .final .btn{margin-top:24px}
+
+  footer{background:var(--blue-d);color:#9fb6c8;padding:50px 0 26px}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
+  .foot b.brand{font-family:var(--ff-serif);color:#fff;font-size:1.4rem;display:block;margin-bottom:8px}
+  .foot h4{color:#fff;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:13px}
+  .foot a,.foot p{color:#9fb6c8;font-size:.92rem;display:block;margin-bottom:8px}.foot a:hover{color:var(--orange)}
+  .disc{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;font-size:.8rem;color:#6f8aa0}
+
+  .wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(37,211,102,.7);transition:transform .2s}
+  .wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
+
+  @media(max-width:880px){.hero .wrap{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.nav-links{display:none}.nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 24px;gap:16px;border-bottom:1px solid var(--line)}.menu-btn{display:grid;place-items:center}.gallery a:nth-child(1){grid-column:span 2}.foot{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="brand"><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="#f4a23b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 5l8 7M6 10v9h12v-9"/></svg></span> Horizonte</a>
+    <nav class="nav-links" id="nav">
+      <a href="#comofunciona">Como funciona</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#imoveis">Imóveis</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#avaliar" class="btn btn-blue" style="padding:11px 20px;font-size:.9rem">Avaliar meu imóvel</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">● Avaliação 100% gratuita</span>
+        <h1>Descubra <span class="o">quanto vale</span> o seu imóvel hoje.</h1>
+        <p>Receba uma avaliação profissional e uma estratégia para vender mais rápido e pelo melhor preço — sem custo e sem compromisso.</p>
+        <ul>
+          <li>Análise de mercado da sua região</li>
+          <li>Fotos e anúncio que realmente vendem</li>
+          <li>Negociação conduzida por especialista</li>
+        </ul>
+      </div>
+      <div class="leadcard" id="avaliar">
+        <form id="leadForm">
+          <h3>Quanto vale meu imóvel?</h3>
+          <div class="sub">Preencha e receba sua avaliação gratuita.</div>
+          <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" type="text" placeholder="Seu nome completo" required></div>
+          <div class="field"><label for="tel">WhatsApp</label><input id="tel" name="tel" type="tel" placeholder="(00) 00000-0000" required></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" placeholder="voce@email.com" required></div>
+          <div class="field"><label for="tipo">Tipo de imóvel</label>
+            <select id="tipo" name="tipo"><option>Apartamento</option><option>Casa</option><option>Terreno</option><option>Comercial</option><option>Outro</option></select>
+          </div>
+          <button class="btn btn-orange" type="submit">Quero minha avaliação grátis</button>
+          <div class="privacy">🔒 Seus dados estão seguros. Sem spam.</div>
+        </form>
+        <div class="ok" id="okMsg">
+          <div class="ic">✓</div>
+          <h3>Recebido!</h3>
+          <p>Em breve um especialista entra em contato com a sua avaliação. (Demonstração — nenhum dado foi enviado.)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="comofunciona">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Simples e rápido</div>
+        <h2>Da avaliação à venda em 3 passos</h2>
+      </div>
+      <div class="steps">
+        <div class="scard"><div class="n">01</div><h3>Avaliação grátis</h3><p>Analisamos seu imóvel e o mercado da região para chegar ao preço ideal de venda.</p></div>
+        <div class="scard"><div class="n">02</div><h3>Divulgação que vende</h3><p>Fotos profissionais, anúncio otimizado e exposição nos principais portais e na nossa carteira de clientes.</p></div>
+        <div class="scard"><div class="n">03</div><h3>Negociação segura</h3><p>Conduzimos visitas, propostas e toda a documentação até a assinatura, com você acompanhando tudo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="why" id="diferenciais">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Por que a Horizonte</div>
+        <h2>Conhecemos a sua região como ninguém</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><div class="ic">📍</div><h3>Especialista local</h3><p>Atuação concentrada na região, com leitura precisa de preço e demanda de cada bairro.</p></div>
+        <div class="why-item"><div class="ic">📸</div><h3>Anúncio que destaca</h3><p>Fotografia profissional e descrição estratégica que fazem seu imóvel se sobressair.</p></div>
+        <div class="why-item"><div class="ic">🤝</div><h3>Carteira de compradores</h3><p>Base ativa de clientes qualificados procurando imóveis como o seu agora.</p></div>
+        <div class="why-item"><div class="ic">📑</div><h3>Suporte completo</h3><p>Documentação, financiamento e burocracia acompanhados do começo ao fim.</p></div>
+      </div>
+      <div class="why-stats">
+        <div class="s"><b>+350</b><span>imóveis negociados</span></div>
+        <div class="s"><b>38 dias</b><span>tempo médio de venda</span></div>
+        <div class="s"><b>4,9★</b><span>avaliação dos clientes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="imoveis">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Portfólio</div>
+        <h2>Alguns imóveis que ajudamos a vender</h2>
+        <p>Imagens ilustrativas de imóveis fictícios.</p>
+      </div>
+      <div class="gallery">
+        <a href="#avaliar"><img src="https://picsum.photos/seed/imv-1/800/700" alt="Imóvel" loading="lazy"><span class="lbl">Cobertura · Vista mar</span></a>
+        <a href="#avaliar"><img src="https://picsum.photos/seed/imv-2/500/350" alt="Imóvel" loading="lazy"><span class="lbl">Apto 3 quartos</span></a>
+        <a href="#avaliar"><img src="https://picsum.photos/seed/imv-3/500/350" alt="Imóvel" loading="lazy"><span class="lbl">Casa em condomínio</span></a>
+        <a href="#avaliar"><img src="https://picsum.photos/seed/imv-4/500/350" alt="Imóvel" loading="lazy"><span class="lbl">Studio mobiliado</span></a>
+        <a href="#avaliar"><img src="https://picsum.photos/seed/imv-5/500/350" alt="Imóvel" loading="lazy"><span class="lbl">Sobrado amplo</span></a>
+        <a href="#avaliar"><img src="https://picsum.photos/seed/imv-6/900/350" alt="Imóvel" loading="lazy"><span class="lbl">Terreno com projeto aprovado</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="test" id="depoimentos">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Quem já vendeu com a gente</div>
+        <h2>Clientes que recomendam</h2>
+      </div>
+      <div class="test-grid">
+        <div class="tcard"><div class="stars">★★★★★</div><p>"Tentei vender sozinho por meses. Com a Horizonte, fechei em menos de 40 dias e por um valor acima do que esperava."</p><div class="who"><img src="https://picsum.photos/seed/cli-1/100/100" alt="" loading="lazy"><span><b>Eduardo S.</b><br><span>Vendeu apartamento</span></span></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"Atendimento honesto do início ao fim. Me explicaram cada etapa e nunca fiquei no escuro sobre nada."</p><div class="who"><img src="https://picsum.photos/seed/cli-2/100/100" alt="" loading="lazy"><span><b>Tatiane R.</b><br><span>Vendeu casa</span></span></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"As fotos ficaram impecáveis e o imóvel teve visita já na primeira semana. Profissionalismo de verdade."</p><div class="who"><img src="https://picsum.photos/seed/cli-3/100/100" alt="" loading="lazy"><span><b>Marcelo A.</b><br><span>Vendeu cobertura</span></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <div class="urg">⏳ Avaliações gratuitas limitadas neste mês</div>
+      <h2>Seu imóvel pode estar valendo mais do que você imagina</h2>
+      <p>Solicite agora a sua avaliação gratuita e descubra o valor real do seu imóvel no mercado atual.</p>
+      <div><a href="#avaliar" class="btn btn-orange">Quero avaliar meu imóvel</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <b class="brand">Horizonte Imóveis</b>
+        <p>Avaliação, venda e locação com estratégia e transparência. CRECI 00000 (fictício).</p>
+        <p>Av. Beira-Mar, 1500 · Sala 8<br>Cidade Fictícia · UF</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="#comofunciona">Como funciona</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#imoveis">Imóveis</a>
+        <a href="#avaliar">Avaliar imóvel</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp (00) 00000-0000</a>
+        <a href="mailto:contato@horizonteimoveis.com.br">contato@horizonteimoveis.com.br</a>
+        <a href="#">@horizonte.imoveis</a>
+      </div>
+    </div>
+    <div class="disc">Conteúdo demonstrativo e fictício, criado para fins de portfólio. Nomes, imóveis, números de CRECI, depoimentos e dados de contato são ilustrativos e não representam pessoas, imóveis ou negócios reais. O formulário não envia dados a nenhum servidor.</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20do%20meu%20im%C3%B3vel." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.9 6.5L3 29l7.2-2.3c1.8 1 3.7 1.5 5.8 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.3 1.3 1.4-4.1-.3-.4c-1-1.6-1.6-3.4-1.6-5.3 0-5.6 4.5-10.1 10.1-10.1 5.6 0 10.1 4.5 10.1 10.1S21.6 25.6 16 25.6zm5.5-7.6c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  document.getElementById('leadForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    this.style.display='none';
+    document.getElementById('okMsg').classList.add('show');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AuMigo Pet &amp; Vet — Cuidado de quem ama o seu pet</title>
+<meta name="description" content="Clínica veterinária, banho e tosa e pet shop com atendimento de emergência 24h. Cuidado, carinho e confiança para o seu melhor amigo. Agende pelo WhatsApp." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2336c5f0'/%3E%3Cg fill='%23fff'%3E%3Ccircle cx='38' cy='40' r='8'/%3E%3Ccircle cx='62' cy='40' r='8'/%3E%3Ccircle cx='28' cy='56' r='7'/%3E%3Ccircle cx='72' cy='56' r='7'/%3E%3Cpath d='M50 54 c-12 0-20 9-20 17 c0 6 5 9 11 7 c5-2 13-2 18 0 c6 2 11-1 11-7 c0-8-8-17-20-17z'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --blue:#2bb6e8; --blue-d:#1f93bf; --yellow:#ffd23f; --green:#37c9a8; --coral:#ff8a5c; --pink:#ff7eb3;
+    --cream:#fff8ec; --sky:#eaf8fe; --paper:#ffffff; --ink:#2a3b46; --soft:#5f7682; --line:#e7eef2;
+    --ff-round:'Baloo 2',cursive; --ff-body:'Nunito',sans-serif; --max:1140px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff-body);color:var(--ink);background:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--ff-round);font-weight:700;line-height:1.15}
+  .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(20px,5vw,44px)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-round);font-weight:600;border-radius:999px;padding:14px 30px;font-size:1.05rem;cursor:pointer;border:3px solid transparent;transition:transform .18s,background .2s,box-shadow .2s}
+  .btn-blue{background:var(--blue);color:#fff;box-shadow:0 12px 26px -10px rgba(43,182,232,.7)}
+  .btn-blue:hover{background:var(--blue-d);transform:translateY(-3px) rotate(-1deg)}
+  .btn-yellow{background:var(--yellow);color:#5a4500;box-shadow:0 12px 26px -10px rgba(255,210,63,.8)}
+  .btn-yellow:hover{transform:translateY(-3px) rotate(1deg)}
+  .btn-white{background:#fff;border-color:var(--blue);color:var(--blue-d)}
+  .btn-white:hover{transform:translateY(-3px)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--sky)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--ff-round);font-weight:800;font-size:1.4rem;color:var(--blue-d)}
+  .brand .mk{font-size:1.5rem}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{color:var(--soft);font-family:var(--ff-round);font-weight:600;font-size:.98rem;transition:color .2s}
+  .nav-links a:hover{color:var(--blue)}
+  .menu-btn{display:none;background:none;border:2px solid var(--sky);border-radius:12px;width:44px;height:44px;color:var(--blue);font-size:1.3rem;cursor:pointer}
+
+  /* Emergency strip */
+  .emerg{background:var(--coral);color:#fff;text-align:center;font-family:var(--ff-round);font-weight:600;padding:9px 14px;font-size:.95rem}
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,var(--sky),#fff);position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,56px);align-items:center;padding-block:clamp(56px,8vw,96px)}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--yellow);color:#9a7b00;font-family:var(--ff-round);font-weight:600;font-size:.86rem;padding:7px 16px;border-radius:999px;margin-bottom:22px}
+  .hero h1{font-size:clamp(2.4rem,5.6vw,4rem);color:var(--ink);max-width:15ch}
+  .hero h1 .b{color:var(--blue)}.hero h1 .g{color:var(--green)}
+  .hero p{font-size:1.18rem;color:var(--soft);margin-top:18px;max-width:44ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .hero-figure{position:relative}
+  .hero-figure .img{aspect-ratio:1;border-radius:42% 58% 55% 45% / 52% 48% 52% 48%;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 60px -28px rgba(31,147,191,.5)}
+  .hero-figure img{width:100%;height:100%;object-fit:cover}
+  .hero-figure .bubble{position:absolute;background:#fff;border:2px solid var(--sky);border-radius:18px;padding:12px 18px;font-family:var(--ff-round);font-weight:600;box-shadow:0 14px 30px -16px rgba(31,147,191,.4)}
+  .hero-figure .b1{bottom:18px;left:-14px;color:var(--green)}
+  .hero-figure .b2{top:24px;right:-10px;color:var(--coral)}
+  .paw{position:absolute;font-size:2rem;opacity:.25;pointer-events:none}
+
+  section{padding:clamp(56px,8vw,96px) 0;position:relative}
+  .head{max-width:60ch;margin-bottom:46px}
+  .head.center{text-align:center;margin-inline:auto}
+  .head .kicker{font-family:var(--ff-round);font-weight:600;color:var(--blue);font-size:1rem;margin-bottom:8px}
+  .head h2{font-size:clamp(2rem,4.6vw,3rem);color:var(--ink)}
+  .head p{color:var(--soft);font-size:1.1rem;margin-top:12px}
+
+  /* Serviços */
+  .serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  .serv{border-radius:24px;padding:30px 28px;border:2px solid var(--line);background:#fff;transition:transform .2s,box-shadow .2s}
+  .serv:hover{transform:translateY(-6px);box-shadow:0 24px 44px -24px rgba(31,147,191,.45)}
+  .serv .ic{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:1.8rem;margin-bottom:16px}
+  .serv:nth-child(1) .ic{background:#e3f6fd}.serv:nth-child(2) .ic{background:#fff3cf}
+  .serv:nth-child(3) .ic{background:#dcf7ef}.serv:nth-child(4) .ic{background:#ffe6da}
+  .serv h3{font-size:1.4rem;color:var(--ink);margin-bottom:6px}
+  .serv p{color:var(--soft);font-size:.98rem}
+  .serv .tag{display:inline-block;margin-top:12px;font-family:var(--ff-round);font-weight:600;font-size:.82rem;color:var(--coral)}
+
+  /* Diferenciais */
+  .why{background:var(--cream)}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+  .why-item{background:#fff;border-radius:22px;padding:28px;border:2px solid var(--line);text-align:center}
+  .why-item .ic{font-size:2.2rem;margin-bottom:10px}
+  .why-item h3{font-size:1.3rem;color:var(--blue-d);margin-bottom:6px}
+  .why-item p{color:var(--soft);font-size:.96rem}
+
+  /* Stats faixa */
+  .stats{background:var(--blue);color:#fff}
+  .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;text-align:center}
+  .stats-grid .s b{font-family:var(--ff-round);font-weight:800;font-size:2.6rem;display:block}
+  .stats-grid .s span{color:rgba(255,255,255,.9);font-weight:600}
+
+  /* Depoimentos */
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+  .tcard{background:#fff;border:2px solid var(--line);border-radius:24px;padding:28px;position:relative}
+  .tcard .stars{color:var(--yellow);letter-spacing:2px;font-size:1.1rem;margin-bottom:8px}
+  .tcard p{font-size:1.02rem}
+  .tcard .who{display:flex;align-items:center;gap:12px;margin-top:16px}
+  .tcard .who img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--sky)}
+  .tcard .who b{font-family:var(--ff-round);color:var(--ink)}
+  .tcard .who span{color:var(--soft);font-size:.85rem}
+
+  /* Galeria */
+  .gal{background:var(--sky)}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px}
+  .gallery div{border-radius:18px;overflow:hidden}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .gallery div:hover img{transform:scale(1.08)}
+  .gallery div:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .gallery div:nth-child(4){grid-row:span 2}
+
+  /* FAQ */
+  .faq-list{max-width:800px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+  .acc{background:#fff;border:2px solid var(--line);border-radius:20px;overflow:hidden}
+  .acc summary{list-style:none;cursor:pointer;padding:20px 26px;display:flex;justify-content:space-between;gap:14px;align-items:center;font-family:var(--ff-round);font-weight:600;font-size:1.15rem;color:var(--ink)}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc .plus{color:var(--blue);font-size:1.5rem;transition:transform .25s}
+  .acc[open] .plus{transform:rotate(45deg)}
+  .acc .body{padding:0 26px 22px;color:var(--soft)}
+
+  /* Final */
+  .final{text-align:center;background:linear-gradient(135deg,var(--yellow),#ffe487)}
+  .final h2{font-size:clamp(2.1rem,5vw,3.4rem);color:#5a4500;max-width:18ch;margin-inline:auto}
+  .final p{color:#7a5e10;max-width:46ch;margin:14px auto 0;font-size:1.12rem;font-weight:600}
+  .final .btn{margin-top:26px}
+  .final small{display:block;margin-top:16px;color:#7a5e10;font-weight:600}
+
+  footer{background:var(--ink);color:#b7c6cf;padding:50px 0 28px}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+  .foot b.brand{font-family:var(--ff-round);color:#fff;font-size:1.4rem;display:block;margin-bottom:8px}
+  .foot h4{color:#fff;font-family:var(--ff-round);font-size:1rem;margin-bottom:12px}
+  .foot a,.foot p{color:#b7c6cf;font-size:.94rem;display:block;margin-bottom:8px}.foot a:hover{color:var(--yellow)}
+  .disc{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;font-size:.82rem;color:#869aa4}
+
+  .wa{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(37,211,102,.7);transition:transform .2s}
+  .wa:hover{transform:scale(1.1) rotate(6deg)}.wa svg{width:32px;height:32px;fill:#fff}
+
+  @media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-figure{max-width:400px;margin-inline:auto}.gallery{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.nav-links{display:none}.nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 24px;gap:16px;border-bottom:2px solid var(--sky)}.menu-btn{display:grid;place-items:center}.gallery div:nth-child(1){grid-column:span 2}.foot{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="emerg">🚨 Emergência veterinária 24 horas — ligue (00) 0000-0000</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="brand"><span class="mk">🐾</span> AuMigo</a>
+    <nav class="nav-links" id="nav">
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#depoimentos">Tutores</a>
+      <a href="#espaco">Nosso espaço</a>
+      <a href="#agendar" class="btn btn-blue" style="padding:11px 22px;font-size:.92rem">Agendar 🐶</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <span class="paw" style="top:40px;right:30%">🐾</span>
+    <span class="paw" style="bottom:30px;left:8%">🐾</span>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">🐾 Mais de 12 anos cuidando de quem você ama</span>
+        <h1>O <span class="b">cuidado</span> que o seu pet merece, com o <span class="g">carinho</span> que você tem por ele.</h1>
+        <p>Clínica veterinária, banho &amp; tosa e pet shop num lugar só — com equipe apaixonada por animais e emergência 24 horas.</p>
+        <div class="hero-cta">
+          <a href="https://wa.me/5500000000000?text=Oi!%20Quero%20agendar%20um%20atendimento%20para%20o%20meu%20pet%20na%20AuMigo." target="_blank" rel="noopener" class="btn btn-blue">Agendar pelo WhatsApp</a>
+          <a href="#servicos" class="btn btn-white">Ver serviços</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <div class="img"><img src="https://picsum.photos/seed/happydog/700/700" alt="Pet feliz e saudável" /></div>
+        <span class="bubble b1">🦴 Pet feliz!</span>
+        <span class="bubble b2">❤️ Cuidado real</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">O que fazemos</div>
+        <h2>Tudo o que o seu melhor amigo precisa</h2>
+        <p>Saúde, beleza e bem-estar num só lugar, com gente que ama animais de verdade.</p>
+      </div>
+      <div class="serv-grid">
+        <div class="serv"><div class="ic">🩺</div><h3>Consulta veterinária</h3><p>Check-up, diagnóstico e tratamento com atenção e tempo para o seu pet.</p></div>
+        <div class="serv"><div class="ic">🛁</div><h3>Banho &amp; tosa</h3><p>Higiene, hidratação e tosa com produtos suaves e muito carinho no processo.</p></div>
+        <div class="serv"><div class="ic">💉</div><h3>Vacinação</h3><p>Calendário em dia, vacinas importadas e nacionais, com carteirinha controlada.</p></div>
+        <div class="serv"><div class="ic">🚑</div><h3>Emergência 24h</h3><p>Estamos abertos quando ninguém mais está. Atendimento de urgência a qualquer hora.<span class="tag">▶ 24 horas, todos os dias</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="why" id="diferenciais">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Por que a AuMigo</div>
+        <h2>Aqui o seu pet é tratado como da família</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><div class="ic">👩‍⚕️</div><h3>Equipe apaixonada</h3><p>Profissionais experientes que tratam cada animal com paciência e afeto.</p></div>
+        <div class="why-item"><div class="ic">🏥</div><h3>Estrutura completa</h3><p>Ambiente higienizado, equipamentos modernos e espaço pensado para o conforto.</p></div>
+        <div class="why-item"><div class="ic">🕐</div><h3>Atendimento 24h</h3><p>Plantão de emergência todos os dias, porque imprevisto não tem hora.</p></div>
+        <div class="why-item"><div class="ic">🐾</div><h3>Carinho de verdade</h3><p>Cada pet é recebido pelo nome e cuidado como se fosse nosso.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap">
+      <div class="stats-grid">
+        <div class="s"><b>12+</b><span>anos cuidando de pets</span></div>
+        <div class="s"><b>9.000+</b><span>amiguinhos atendidos</span></div>
+        <div class="s"><b>24h</b><span>de plantão</span></div>
+        <div class="s"><b>4,9★</b><span>avaliação dos tutores</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Tutores felizes</div>
+        <h2>O que dizem quem confia o pet à gente</h2>
+      </div>
+      <div class="test-grid">
+        <div class="tcard"><div class="stars">★★★★★</div><p>"Levei minha cachorrinha às 2h da manhã numa emergência e fui acolhida com um carinho que eu não esperava. Salvaram a Mel. ❤️"</p><div class="who"><img src="https://picsum.photos/seed/tutor-1/100/100" alt="" loading="lazy"><span><b>Bianca &amp; Mel</b><br><span>Tutora</span></span></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"O Thor adora ir ao banho e tosa! A equipe trata ele pelo nome e ele volta cheiroso e feliz da vida."</p><div class="who"><img src="https://picsum.photos/seed/tutor-2/100/100" alt="" loading="lazy"><span><b>Rodrigo &amp; Thor</b><br><span>Tutor</span></span></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"Atendimento veterinário atencioso e honesto. Nunca empurram exame desnecessário. Confio de olhos fechados."</p><div class="who"><img src="https://picsum.photos/seed/tutor-3/100/100" alt="" loading="lazy"><span><b>Carla &amp; Nina</b><br><span>Tutora</span></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPAÇO -->
+  <section class="gal" id="espaco">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Venha nos conhecer</div>
+        <h2>Um cantinho feito com amor</h2>
+        <p>Imagens ilustrativas do nosso espaço e da nossa equipe.</p>
+      </div>
+      <div class="gallery">
+        <div><img src="https://picsum.photos/seed/pet-esp1/800/700" alt="Espaço da clínica" loading="lazy"></div>
+        <div><img src="https://picsum.photos/seed/pet-esp2/500/350" alt="Banho e tosa" loading="lazy"></div>
+        <div><img src="https://picsum.photos/seed/pet-esp3/500/350" alt="Atendimento" loading="lazy"></div>
+        <div><img src="https://picsum.photos/seed/pet-esp4/500/700" alt="Equipe" loading="lazy"></div>
+        <div><img src="https://picsum.photos/seed/pet-esp5/500/350" alt="Pet shop" loading="lazy"></div>
+        <div><img src="https://picsum.photos/seed/pet-esp6/500/350" alt="Recepção" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="head center"><div class="kicker">Perguntas frequentes</div><h2>Tirando suas dúvidas 🐶</h2></div>
+      <div class="faq-list">
+        <details class="acc" open><summary>Vocês atendem emergência mesmo de madrugada? <span class="plus">+</span></summary><div class="body">Sim! Temos plantão veterinário 24 horas, todos os dias, inclusive fins de semana e feriados. É só ligar e vir.</div></details>
+        <details class="acc"><summary>Preciso agendar o banho e tosa? <span class="plus">+</span></summary><div class="body">Recomendamos agendar pelo WhatsApp para garantir horário e evitar espera, mas também atendemos por ordem de chegada quando há disponibilidade.</div></details>
+        <details class="acc"><summary>Atendem todas as espécies? <span class="plus">+</span></summary><div class="body">Atendemos cães e gatos em todos os serviços. Para pets exóticos, entre em contato que orientamos o melhor caminho.</div></details>
+        <details class="acc"><summary>Tem pet shop no local? <span class="plus">+</span></summary><div class="body">Tem sim! Rações, petiscos, brinquedos e acessórios selecionados, com indicação da nossa equipe para cada fase do seu pet.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final" id="agendar">
+    <div class="wrap">
+      <h2>Bora cuidar do seu melhor amigo? 🐾</h2>
+      <p>Agende uma consulta, banho ou avaliação pelo WhatsApp. É rapidinho e o seu pet agradece!</p>
+      <a href="https://wa.me/5500000000000?text=Oi!%20Quero%20agendar%20um%20atendimento%20para%20o%20meu%20pet%20na%20AuMigo." target="_blank" rel="noopener" class="btn btn-blue">Agendar agora pelo WhatsApp</a>
+      <small>Atendimento 24h · Equipe que ama animais</small>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <b class="brand">🐾 AuMigo Pet &amp; Vet</b>
+        <p>Clínica veterinária, banho &amp; tosa e pet shop. Cuidado e carinho 24 horas.</p>
+        <p>Av. dos Bichos, 321<br>Cidade Fictícia · UF</p>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <a href="#servicos">Consulta veterinária</a>
+        <a href="#servicos">Banho &amp; tosa</a>
+        <a href="#servicos">Vacinação</a>
+        <a href="#servicos">Emergência 24h</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp (00) 00000-0000</a>
+        <a href="tel:+550000000000">Emergência (00) 0000-0000</a>
+        <a href="#">@aumigo.petvet</a>
+      </div>
+    </div>
+    <div class="disc">Conteúdo demonstrativo e fictício, criado para fins de portfólio. Nome, depoimentos, imagens e dados de contato são ilustrativos e não representam estabelecimentos, pessoas ou animais reais.</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5500000000000?text=Oi!%20Quero%20agendar%20um%20atendimento%20para%20o%20meu%20pet%20na%20AuMigo." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.9 6.5L3 29l7.2-2.3c1.8 1 3.7 1.5 5.8 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.3 1.3 1.4-4.1-.3-.4c-1-1.6-1.6-3.4-1.6-5.3 0-5.6 4.5-10.1 10.1-10.1 5.6 0 10.1 4.5 10.1 10.1S21.6 25.6 16 25.6zm5.5-7.6c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  document.querySelectorAll('.acc').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.acc').forEach(o=>{if(o!==d)o.open=false})}));
+</script>
+</body>
+</html>

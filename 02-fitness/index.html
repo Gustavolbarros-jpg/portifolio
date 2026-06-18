@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FORJA Personal Training — Transforme seu corpo em 12 semanas</title>
+<meta name="description" content="Treino personalizado, acompanhamento real e método validado. Transforme seu corpo em 12 semanas mesmo com pouco tempo. Agende sua aula experimental gratuita." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230d0d0f'/%3E%3Cpath d='M22 50 h8 M70 50 h8 M30 38 h6 v24 h-6z M64 38 h6 v24 h-6z M36 47 h28 v6 h-28z' fill='%23c6f24e'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e; --bg-2:#141417; --panel:#1b1b1f; --line:#2a2a30;
+    --ink:#f4f4f5; --muted:#a1a1aa; --lime:#c6f24e; --lime-d:#a7d827; --orange:#ff5c2a;
+    --ff-display:'Oswald',sans-serif; --ff-body:'Barlow',sans-serif; --max:1160px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--ff-display);text-transform:uppercase;line-height:.98;font-weight:700;letter-spacing:.01em}
+  .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(20px,5vw,44px)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-display);text-transform:uppercase;font-weight:600;letter-spacing:.04em;border-radius:6px;padding:16px 30px;font-size:1.05rem;cursor:pointer;border:2px solid transparent;transition:transform .15s,background .2s,box-shadow .2s}
+  .btn-lime{background:var(--lime);color:#0c0c0e;box-shadow:0 10px 30px -10px rgba(198,242,78,.6)}
+  .btn-lime:hover{transform:translateY(-3px);box-shadow:0 16px 36px -10px rgba(198,242,78,.75)}
+  .btn-ghost{border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+  .italic{font-style:italic}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(12,12,14,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{font-family:var(--ff-display);font-weight:700;font-size:1.5rem;letter-spacing:.12em;display:flex;align-items:center;gap:10px}
+  .brand .b{color:var(--lime)}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--muted);font-weight:600;font-size:.95rem;transition:color .2s}
+  .nav-links a:hover{color:var(--lime)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;width:44px;height:44px;color:#fff;font-size:1.3rem;cursor:pointer}
+
+  /* Hero */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;
+    background:linear-gradient(100deg,rgba(12,12,14,.97) 38%,rgba(12,12,14,.45)),
+      url("https://picsum.photos/seed/gymworkout/1600/1000") right center/cover;}
+  .hero .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(198,242,78,.12);border:1px solid rgba(198,242,78,.4);color:var(--lime);font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:26px}
+  .hero h1{font-size:clamp(2.8rem,8vw,5.6rem);max-width:15ch}
+  .hero h1 em{color:var(--lime);font-style:italic}
+  .hero p{color:var(--muted);font-size:clamp(1.05rem,2.3vw,1.35rem);max-width:48ch;margin-top:22px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:40px}
+  .hero-meta div{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:600}
+  .hero-meta .k{font-family:var(--ff-display);color:var(--lime);font-size:1.6rem}
+
+  /* Marquee */
+  .marquee{background:var(--lime);color:#0c0c0e;overflow:hidden;white-space:nowrap;border-block:2px solid #0c0c0e}
+  .marquee div{display:inline-block;padding:12px 0;font-family:var(--ff-display);text-transform:uppercase;font-weight:700;letter-spacing:.08em;animation:scroll 22s linear infinite}
+  .marquee span{margin:0 26px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  section{padding:clamp(60px,9vw,100px) 0}
+  .head{max-width:60ch;margin-bottom:48px}
+  .head .kicker{color:var(--lime);font-family:var(--ff-display);letter-spacing:.16em;text-transform:uppercase;font-size:.95rem;margin-bottom:14px}
+  .head h2{font-size:clamp(2rem,5vw,3.4rem)}
+  .head p{color:var(--muted);font-size:1.1rem;margin-top:14px;font-family:var(--ff-body)}
+  .center{text-align:center;margin-inline:auto}
+
+  /* Dores */
+  .pains-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+  .pain{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px;position:relative;transition:transform .2s,border-color .2s}
+  .pain:hover{transform:translateY(-5px);border-color:var(--lime)}
+  .pain .x{font-family:var(--ff-display);font-size:2.4rem;color:var(--orange);line-height:1}
+  .pain h3{font-size:1.3rem;margin:10px 0 8px}
+  .pain p{color:var(--muted);font-family:var(--ff-body);font-size:.97rem;text-transform:none}
+
+  /* Metodologia */
+  .method{background:var(--bg-2)}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .step{position:relative;padding:32px 26px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden}
+  .step .n{position:absolute;top:-12px;right:10px;font-family:var(--ff-display);font-size:5rem;color:rgba(198,242,78,.1);font-weight:700}
+  .step .ic{font-size:1.8rem;margin-bottom:14px}
+  .step h3{font-size:1.4rem;color:var(--lime);margin-bottom:10px}
+  .step p{color:var(--muted);font-family:var(--ff-body);font-size:.97rem;text-transform:none}
+
+  /* Antes / depois */
+  .ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .ba{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+  .ba .imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;position:relative}
+  .ba .imgs figure{position:relative;margin:0;aspect-ratio:3/4;overflow:hidden}
+  .ba .imgs img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2)}
+  .ba .imgs figcaption{position:absolute;top:10px;left:10px;font-family:var(--ff-display);font-size:.72rem;letter-spacing:.1em;background:#0c0c0e;color:#fff;padding:4px 9px;border-radius:4px}
+  .ba .imgs figure:last-child figcaption{background:var(--lime);color:#0c0c0e}
+  .ba .info{padding:20px 22px}
+  .ba .info b{font-family:var(--ff-display);font-size:1.2rem;color:var(--ink)}
+  .ba .info .res{display:inline-block;margin-top:6px;color:var(--lime);font-weight:700;font-family:var(--ff-body)}
+  .ba .info p{color:var(--muted);font-family:var(--ff-body);font-size:.92rem;margin-top:6px;text-transform:none}
+
+  /* Depoimentos */
+  .test{background:var(--bg-2)}
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+  .tcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px}
+  .tcard .stars{color:var(--lime);letter-spacing:3px;margin-bottom:12px}
+  .tcard p{font-family:var(--ff-body);font-size:1.02rem;text-transform:none}
+  .tcard .who{display:flex;align-items:center;gap:13px;margin-top:18px}
+  .tcard .who img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+  .tcard .who b{font-family:var(--ff-display);font-size:1.05rem;letter-spacing:.04em}
+  .tcard .who span{color:var(--muted);font-size:.85rem;font-family:var(--ff-body)}
+
+  /* Oferta */
+  .offer{position:relative}
+  .offer-box{background:linear-gradient(120deg,var(--lime),var(--lime-d));color:#0c0c0e;border-radius:22px;padding:clamp(36px,6vw,64px);display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;overflow:hidden;position:relative}
+  .offer-box::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border:30px solid rgba(0,0,0,.07);border-radius:50%}
+  .offer-box h2{font-size:clamp(2rem,5vw,3.2rem);color:#0c0c0e}
+  .offer-box p{font-family:var(--ff-body);font-weight:500;margin-top:14px;font-size:1.1rem;text-transform:none}
+  .offer-box ul{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px}
+  .offer-box li{font-family:var(--ff-body);font-weight:600;display:flex;gap:10px;align-items:center}
+  .offer-box li::before{content:"✓";font-family:var(--ff-display);background:#0c0c0e;color:var(--lime);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.8rem}
+  .timer-card{background:#0c0c0e;color:#fff;border-radius:16px;padding:28px;text-align:center;position:relative;z-index:2}
+  .timer-card .small{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--lime);font-weight:700}
+  .timer{display:flex;justify-content:center;gap:10px;margin:16px 0}
+  .timer .u{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 0;width:62px}
+  .timer .u b{font-family:var(--ff-display);font-size:1.9rem;display:block;color:var(--lime)}
+  .timer .u span{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .timer-card .slots{font-family:var(--ff-body);color:var(--muted);font-size:.9rem;margin-bottom:16px}
+  .timer-card .slots b{color:var(--orange)}
+
+  /* FAQ */
+  .faq-list{max-width:820px;margin-inline:auto;display:flex;flex-direction:column;gap:12px}
+  .acc{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .acc summary{list-style:none;cursor:pointer;padding:20px 24px;display:flex;justify-content:space-between;gap:14px;align-items:center;font-family:var(--ff-display);font-size:1.15rem;letter-spacing:.02em}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc .plus{color:var(--lime);font-size:1.5rem;transition:transform .25s}
+  .acc[open] .plus{transform:rotate(45deg)}
+  .acc .body{padding:0 24px 22px;color:var(--muted);font-family:var(--ff-body);text-transform:none}
+
+  /* Final CTA */
+  .final{text-align:center;background:
+    linear-gradient(rgba(12,12,14,.82),rgba(12,12,14,.92)),
+    url("https://picsum.photos/seed/runningtrack/1600/700") center/cover}
+  .final h2{font-size:clamp(2.2rem,6vw,4rem);max-width:18ch;margin-inline:auto}
+  .final h2 em{color:var(--lime);font-style:italic}
+  .final p{color:var(--muted);max-width:46ch;margin:18px auto 0;font-family:var(--ff-body);font-size:1.1rem;text-transform:none}
+
+  footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;color:var(--muted)}
+  .foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+  .foot .brand{font-size:1.3rem}
+  .foot a{color:var(--muted)}.foot a:hover{color:var(--lime)}
+  .foot .links{display:flex;gap:20px;flex-wrap:wrap}
+  .disc{max-width:var(--max);margin:26px auto 0;padding-inline:clamp(20px,5vw,44px);color:#5b5b63;font-size:.82rem;font-family:var(--ff-body)}
+
+  .wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(37,211,102,.7);transition:transform .2s}
+  .wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
+
+  @media(max-width:820px){.offer-box{grid-template-columns:1fr}}
+  @media(max-width:680px){
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--bg-2);padding:18px 24px;gap:16px;border-bottom:1px solid var(--line)}
+    .menu-btn{display:grid;place-items:center}
+    .hero{min-height:auto;padding:70px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="brand">FOR<span class="b">JA</span></a>
+    <nav class="nav-links" id="nav">
+      <a href="#metodo">Método</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#oferta" class="btn btn-lime" style="padding:11px 20px;font-size:.92rem">Aula grátis</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge">● Vagas abertas — Turma de inverno</span>
+      <h1>Transforme seu corpo em <em>12 semanas</em></h1>
+      <p>Treino feito sob medida pra sua rotina, seu corpo e seu objetivo. Mesmo com pouco tempo, mesmo se você já tentou antes e travou no meio do caminho.</p>
+      <div class="hero-cta">
+        <a href="#oferta" class="btn btn-lime">Quero minha aula grátis</a>
+        <a href="#metodo" class="btn btn-ghost">Ver o método</a>
+      </div>
+      <div class="hero-meta">
+        <div><span class="k">+400</span> alunos treinados</div>
+        <div><span class="k">12</span> semanas pra ver resultado</div>
+        <div><span class="k">1:1</span> acompanhamento real</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div>
+      <span>SEM DESCULPA</span>•<span>TREINO INTELIGENTE</span>•<span>RESULTADO REAL</span>•<span>FORÇA</span>•<span>DISCIPLINA</span>•<span>SEM DESCULPA</span>•<span>TREINO INTELIGENTE</span>•<span>RESULTADO REAL</span>•<span>FORÇA</span>•<span>DISCIPLINA</span>•
+    </div>
+  </div>
+
+  <!-- DORES -->
+  <section id="dores">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Se você se identifica…</div>
+        <h2>O problema nunca foi falta de vontade</h2>
+        <p>É falta de método, de constância e de alguém olhando pra VOCÊ. A gente resolve os três.</p>
+      </div>
+      <div class="pains-grid">
+        <div class="pain"><div class="x">✕</div><h3>Sem tempo</h3><p>Você começa empolgado e some na segunda semana porque a rotina não cabe no treino que te passaram.</p></div>
+        <div class="pain"><div class="x">✕</div><h3>Já tentou e travou</h3><p>Academia, app, vídeo no YouTube… nada engatou porque ninguém ajustava nada pra você.</p></div>
+        <div class="pain"><div class="x">✕</div><h3>Medo de se machucar</h3><p>Treina inseguro, sem saber se a execução está certa, e isso te trava antes de evoluir.</p></div>
+        <div class="pain"><div class="x">✕</div><h3>Sem ver resultado</h3><p>Sua dedicação não aparece no espelho e a motivação despenca a cada semana sem progresso.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODO -->
+  <section class="method" id="metodo">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">O Método FORJA</div>
+        <h2>3 pilares pra você não largar no meio</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="n">01</span><div class="ic">📋</div><h3>Avaliação real</h3><p>Mapeamos sua composição corporal, histórico e objetivo. Nada de treino genérico — tudo começa no SEU ponto de partida.</p></div>
+        <div class="step"><span class="n">02</span><div class="ic">🏋️</div><h3>Treino sob medida</h3><p>Programa progressivo que cabe na sua semana, com vídeos de execução e ajuste constante conforme você evolui.</p></div>
+        <div class="step"><span class="n">03</span><div class="ic">📈</div><h3>Acompanhamento 1:1</h3><p>Check-ins semanais, suporte no WhatsApp e cobrança na medida certa. Você nunca treina sozinho.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES / DEPOIS -->
+  <section id="resultados">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Resultados</div>
+        <h2>Transformações de quem confiou no processo</h2>
+        <p>Imagens ilustrativas. Resultados variam conforme dedicação, alimentação e ponto de partida de cada aluno.</p>
+      </div>
+      <div class="ba-grid">
+        <div class="ba">
+          <div class="imgs">
+            <figure><img src="https://picsum.photos/seed/before1/400/520" alt="Antes" loading="lazy"><figcaption>ANTES</figcaption></figure>
+            <figure><img src="https://picsum.photos/seed/after1/400/520" alt="Depois" loading="lazy"><figcaption>DEPOIS</figcaption></figure>
+          </div>
+          <div class="info"><b>Camila, 34</b><span class="res"> · −9 kg em 12 semanas</span><p>"Voltei a ter energia pra brincar com meus filhos e dormir bem."</p></div>
+        </div>
+        <div class="ba">
+          <div class="imgs">
+            <figure><img src="https://picsum.photos/seed/before2/400/520" alt="Antes" loading="lazy"><figcaption>ANTES</figcaption></figure>
+            <figure><img src="https://picsum.photos/seed/after2/400/520" alt="Depois" loading="lazy"><figcaption>DEPOIS</figcaption></figure>
+          </div>
+          <div class="info"><b>Rafael, 41</b><span class="res"> · +6 kg de massa magra</span><p>"Achei que era tarde pra mim. Estava redondamente enganado."</p></div>
+        </div>
+        <div class="ba">
+          <div class="imgs">
+            <figure><img src="https://picsum.photos/seed/before3/400/520" alt="Antes" loading="lazy"><figcaption>ANTES</figcaption></figure>
+            <figure><img src="https://picsum.photos/seed/after3/400/520" alt="Depois" loading="lazy"><figcaption>DEPOIS</figcaption></figure>
+          </div>
+          <div class="info"><b>Juliana, 28</b><span class="res"> · postura e força</span><p>"Sumiram as dores nas costas. Hoje treino porque AMO, não por obrigação."</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="test" id="depoimentos">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">O que os alunos dizem</div>
+        <h2>Prova de que método &gt; motivação</h2>
+      </div>
+      <div class="test-grid">
+        <div class="tcard"><div class="stars">★★★★★</div><p>"Em 3 meses fiz mais do que em 3 anos de academia sozinha. A diferença é ter alguém ajustando tudo pra mim."</p><div class="who"><img src="https://picsum.photos/seed/aluno-a/100/100" alt="" loading="lazy"><span><b>Camila R.</b><br><span>Aluna há 6 meses</span></span></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"O acompanhamento no WhatsApp é o que me fez não desistir. Toda semana tem alguém de olho no meu progresso."</p><div class="who"><img src="https://picsum.photos/seed/aluno-b/100/100" alt="" loading="lazy"><span><b>Rafael M.</b><br><span>Aluno há 1 ano</span></span></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>"Treino em casa, 35 minutos por dia, e tive mais resultado do que esperava. Cabe na minha vida de verdade."</p><div class="who"><img src="https://picsum.photos/seed/aluno-c/100/100" alt="" loading="lazy"><span><b>Juliana P.</b><br><span>Aluna há 4 meses</span></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="offer" id="oferta">
+    <div class="wrap">
+      <div class="offer-box">
+        <div>
+          <h2>Sua 1ª aula é por nossa conta</h2>
+          <p>Agende uma aula experimental gratuita e sinta na prática como é treinar com método e acompanhamento de verdade. Sem mensalidade, sem pegadinha.</p>
+          <ul>
+            <li>Avaliação física inicial inclusa</li>
+            <li>Treino guiado de demonstração</li>
+            <li>Plano dos próximos passos pra você</li>
+          </ul>
+        </div>
+        <div class="timer-card">
+          <div class="small">A turma fecha em</div>
+          <div class="timer" id="timer">
+            <div class="u"><b id="d">00</b><span>dias</span></div>
+            <div class="u"><b id="h">00</b><span>hrs</span></div>
+            <div class="u"><b id="m">00</b><span>min</span></div>
+            <div class="u"><b id="s">00</b><span>seg</span></div>
+          </div>
+          <div class="slots">Restam <b>4 vagas</b> nesta turma</div>
+          <a href="https://wa.me/5500000000000?text=Quero%20agendar%20minha%20aula%20experimental%20gr%C3%A1tis%20na%20FORJA." target="_blank" rel="noopener" class="btn btn-lime" style="width:100%;justify-content:center">Garantir minha vaga grátis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="head center"><div class="kicker">Dúvidas</div><h2>Ainda na dúvida? Bora resolver</h2></div>
+      <div class="faq-list">
+        <details class="acc" open><summary>Preciso já estar em forma pra começar? <span class="plus">+</span></summary><div class="body">Não. O método começa exatamente onde você está hoje. A maioria dos alunos chega sedentária ou voltando depois de anos parada — o treino é progressivo e seguro.</div></details>
+        <details class="acc"><summary>Funciona treinando em casa? <span class="plus">+</span></summary><div class="body">Sim. Montamos o programa de acordo com o que você tem disponível: academia, casa com poucos equipamentos ou só o peso do corpo.</div></details>
+        <details class="acc"><summary>Quanto tempo por dia eu preciso? <span class="plus">+</span></summary><div class="body">A maioria dos planos roda entre 30 e 50 minutos, de 3 a 5 vezes por semana. Tudo ajustado à sua disponibilidade real.</div></details>
+        <details class="acc"><summary>E se eu não gostar? <span class="plus">+</span></summary><div class="body">A aula experimental é gratuita justamente pra você sentir antes de decidir. Sem compromisso e sem pressão.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <h2>O melhor momento pra começar é <em>agora</em></h2>
+      <p>Daqui a 12 semanas você vai querer ter começado hoje. Bora?</p>
+      <a href="https://wa.me/5500000000000?text=Quero%20agendar%20minha%20aula%20experimental%20gr%C3%A1tis%20na%20FORJA." target="_blank" rel="noopener" class="btn btn-lime" style="margin-top:30px">Agendar aula experimental grátis</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="brand">FOR<span class="b">JA</span></div>
+    <div class="links">
+      <a href="#metodo">Método</a><a href="#resultados">Resultados</a><a href="#faq">Dúvidas</a><a href="#oferta">Aula grátis</a>
+    </div>
+    <div>📞 (00) 00000-0000 · @forja.personal</div>
+  </div>
+  <div class="disc">Conteúdo demonstrativo e fictício, criado para fins de portfólio. Marca, depoimentos, imagens e resultados são ilustrativos e não representam alunos reais. Resultados de treino variam de pessoa para pessoa.</div>
+</footer>
+
+<a class="wa" href="https://wa.me/5500000000000?text=Quero%20agendar%20minha%20aula%20experimental%20gr%C3%A1tis%20na%20FORJA." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.9 6.5L3 29l7.2-2.3c1.8 1 3.7 1.5 5.8 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.3 1.3 1.4-4.1-.3-.4c-1-1.6-1.6-3.4-1.6-5.3 0-5.6 4.5-10.1 10.1-10.1 5.6 0 10.1 4.5 10.1 10.1S21.6 25.6 16 25.6zm5.5-7.6c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  document.querySelectorAll('.acc').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.acc').forEach(o=>{if(o!==d)o.open=false})}));
+  // Countdown: próxima quinta-feira como "fechamento da turma"
+  const target=new Date();target.setDate(target.getDate()+((4-target.getDay()+7)%7||7));target.setHours(23,59,59,0);
+  const pad=n=>String(n).padStart(2,'0');
+  function tick(){let diff=Math.max(0,target-new Date());
+    document.getElementById('d').textContent=pad(Math.floor(diff/864e5));
+    document.getElementById('h').textContent=pad(Math.floor(diff/36e5)%24);
+    document.getElementById('m').textContent=pad(Math.floor(diff/6e4)%60);
+    document.getElementById('s').textContent=pad(Math.floor(diff/1e3)%60);}
+  tick();setInterval(tick,1000);
+</script>
+</body>
+</html>

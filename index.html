@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vértice — Landing pages que convertem, para qualquer nicho</title>
+<meta name="description" content="Portfólio de landing pages de alta conversão. 8 nichos, 8 identidades visuais distintas — advocacia, fitness, estética, imóveis, tráfego pago, psicologia, pet e arquitetura." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f172a'/%3E%3Cpath d='M28 30 L50 70 L72 30' fill='none' stroke='%2338bdf8' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0b1120; --bg-soft:#0f172a; --panel:#131c31; --line:#1e293b;
+    --ink:#e8edf6; --muted:#94a3b8; --brand:#38bdf8; --brand-2:#818cf8;
+    --max:1180px; --r:18px;
+    --ff-display:'Space Grotesk',sans-serif; --ff-body:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff-body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(20px,5vw,40px)}
+  h1,h2,h3{font-family:var(--ff-display);line-height:1.12;font-weight:600;letter-spacing:-.02em}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(11,17,32,.72);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:11px;font-family:var(--ff-display);font-weight:700;font-size:1.15rem}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#0b1120;font-weight:700}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{color:var(--muted);font-size:.93rem;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-display);font-weight:600;border-radius:999px;padding:12px 22px;font-size:.95rem;cursor:pointer;border:1px solid transparent;transition:transform .15s,box-shadow .2s,background .2s}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b1120;box-shadow:0 8px 24px -8px rgba(56,189,248,.6)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(56,189,248,.7)}
+  .btn-ghost{border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{background:var(--panel)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:42px;height:42px;color:var(--ink);font-size:1.3rem;cursor:pointer}
+
+  /* Hero */
+  .hero{position:relative;padding:clamp(70px,12vw,130px) 0 clamp(50px,8vw,90px)}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(60% 50% at 80% -10%,rgba(129,140,248,.25),transparent 60%),
+    radial-gradient(50% 45% at 10% 10%,rgba(56,189,248,.18),transparent 60%);pointer-events:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);font-weight:600;border:1px solid var(--line);background:var(--panel);padding:7px 15px;border-radius:999px;margin-bottom:26px}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(56,189,248,.18)}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.3rem);max-width:14ch;font-weight:700}
+  .hero h1 .grad{background:linear-gradient(120deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{color:var(--muted);font-size:clamp(1.05rem,2.2vw,1.3rem);max-width:56ch;margin-top:26px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+  .stats{display:flex;flex-wrap:wrap;gap:clamp(22px,5vw,56px);margin-top:58px;padding-top:32px;border-top:1px solid var(--line)}
+  .stat .num{font-family:var(--ff-display);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:var(--ink)}
+  .stat .lbl{color:var(--muted);font-size:.9rem}
+
+  /* Section heading */
+  .sec{padding:clamp(60px,9vw,100px) 0}
+  .sec-head{max-width:60ch;margin-bottom:48px}
+  .sec-head .kicker{color:var(--brand);font-family:var(--ff-display);font-weight:600;font-size:.95rem;letter-spacing:.04em;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(1.9rem,4.5vw,2.9rem)}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:1.08rem}
+
+  /* Grid of works */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:26px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s;opacity:0;transform:translateY(24px)}
+  .card.in{opacity:1;transform:none}
+  .card:hover{transform:translateY(-6px);border-color:#2b3a55;box-shadow:0 26px 50px -24px rgba(0,0,0,.7)}
+  .preview{position:relative;aspect-ratio:16/10;overflow:hidden;display:block}
+  .mini{position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;gap:9px}
+  .mini .bar{height:11px;border-radius:4px;background:rgba(255,255,255,.65)}
+  .mini .chip{align-self:flex-start;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+  .mini .big{font-family:var(--ff-display);font-weight:700;font-size:1.15rem;line-height:1.15;margin-top:auto}
+  .mini .row{display:flex;gap:7px;margin-top:4px}
+  .mini .pill{height:20px;border-radius:6px;flex:0 0 auto}
+  .preview .tag{position:absolute;top:12px;right:12px;z-index:2;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px;border-radius:999px;background:rgba(11,17,32,.6);color:#fff;backdrop-filter:blur(4px)}
+  .card-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .card-body h3{font-size:1.3rem;margin-bottom:6px}
+  .card-body .niche{color:var(--brand);font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+  .card-body p{color:var(--muted);font-size:.96rem;flex:1}
+  .card-link{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-display);font-weight:600;color:var(--ink);font-size:.96rem}
+  .card-link .arrow{transition:transform .2s}
+  .card:hover .card-link .arrow{transform:translateX(5px)}
+
+  /* Process strip */
+  .why{background:var(--bg-soft);border-block:1px solid var(--line)}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px}
+  .why-item .ic{width:46px;height:46px;border-radius:12px;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center;margin-bottom:16px;font-size:1.3rem}
+  .why-item h3{font-size:1.18rem;margin-bottom:8px}
+  .why-item p{color:var(--muted);font-size:.98rem}
+
+  /* CTA */
+  .cta-box{position:relative;overflow:hidden;border-radius:26px;padding:clamp(40px,7vw,72px);background:linear-gradient(135deg,#101a30,#0c1426);border:1px solid var(--line);text-align:center}
+  .cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 0%,rgba(129,140,248,.25),transparent 65%);pointer-events:none}
+  .cta-box h2{font-size:clamp(1.9rem,4.5vw,3rem);max-width:18ch;margin-inline:auto;position:relative}
+  .cta-box p{color:var(--muted);max-width:50ch;margin:18px auto 0;position:relative;font-size:1.1rem}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px;position:relative}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:46px 0;color:var(--muted)}
+  .foot{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+  .foot a{color:var(--muted);transition:color .2s}
+  .foot a:hover{color:var(--ink)}
+  .foot .links{display:flex;gap:22px;flex-wrap:wrap}
+
+  @media(max-width:780px){
+    .nav-links{display:none}
+    .nav-links.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--bg-soft);border-bottom:1px solid var(--line);padding:18px 24px;gap:18px}
+    .menu-btn{display:grid;place-items:center}
+    .nav .btn-primary{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="logo"><span class="mark">V</span> Vértice</a>
+    <nav class="nav-links" id="nav">
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#processo">Como trabalho</a>
+      <a href="#contato">Contato</a>
+      <a href="#contato" class="btn btn-primary">Quero um orçamento</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+    <a href="#contato" class="btn btn-primary" style="margin-left:auto" id="navCta">Orçamento</a>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow"><span class="dot"></span> Portfólio de landing pages</span>
+      <h1>Landing pages que <span class="grad">convertem</span>, para qualquer nicho.</h1>
+      <p class="lead">Cada projeto abaixo foi desenhado do zero com identidade visual, tom de copy e estrutura próprios. Mesmo profissional por trás — oito resultados que não se parecem.</p>
+      <div class="hero-cta">
+        <a href="#trabalhos" class="btn btn-primary">Ver os 8 projetos →</a>
+        <a href="#contato" class="btn btn-ghost">Falar comigo</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">8</div><div class="lbl">nichos diferentes</div></div>
+        <div class="stat"><div class="num">100%</div><div class="lbl">mobile-first</div></div>
+        <div class="stat"><div class="num">1</div><div class="lbl">objetivo por página</div></div>
+        <div class="stat"><div class="num">∞</div><div class="lbl">testes A/B possíveis</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRABALHOS -->
+  <section class="sec" id="trabalhos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Trabalhos selecionados</div>
+        <h2>Oito nichos, oito identidades.</h2>
+        <p>Clique em qualquer card para abrir a landing page completa. Todo o conteúdo — nomes, depoimentos, números — é fictício e serve apenas como demonstração.</p>
+      </div>
+
+      <div class="grid" id="grid">
+
+        <!-- 01 ADVOCACIA -->
+        <a class="card" href="./01-advocacia/index.html">
+          <div class="preview" style="background:linear-gradient(150deg,#0f2a3f,#0a3d3a)">
+            <span class="tag">Jurídico</span>
+            <div class="mini">
+              <span class="chip" style="background:#c9a227;color:#0f2a3f">Mendonça &amp; Vale</span>
+              <div class="bar" style="width:70%;background:#e9d8a6"></div>
+              <div class="bar" style="width:45%;background:rgba(233,216,166,.4)"></div>
+              <div class="big" style="color:#f4ecd2">Você conhece todos os seus direitos?</div>
+              <div class="row"><span class="pill" style="width:90px;background:#c9a227"></span><span class="pill" style="width:60px;background:rgba(255,255,255,.25)"></span></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="niche">Advocacia · Trabalhista &amp; Família</div>
+            <h3>Mendonça &amp; Vale</h3>
+            <p>Sóbrio, institucional e orientado por confiança. Copy educativa, sem urgência agressiva, respeitando o tom do mercado jurídico.</p>
+            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <!-- 02 FITNESS -->
+        <a class="card" href="./02-fitness/index.html">
+          <div class="preview" style="background:linear-gradient(150deg,#0d0d0f,#18181b)">
+            <span class="tag">Fitness</span>
+            <div class="mini">
+              <span class="chip" style="background:#c6f24e;color:#0d0d0f">FORJA</span>
+              <div class="bar" style="width:75%;background:#c6f24e"></div>
+              <div class="big" style="color:#fff;text-transform:uppercase;font-style:italic">Transforme seu corpo em 12 semanas</div>
+              <div class="row"><span class="pill" style="width:100px;background:#c6f24e"></span><span class="pill" style="width:46px;background:#27272a"></span></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="niche">Personal Trainer</div>
+            <h3>Forja Personal</h3>
+            <p>Energético e direto ao resultado. Tipografia condensada, contraste alto e urgência saudável com vagas limitadas.</p>
+            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <!-- 03 ESTÉTICA -->
+        <a class="card" href="./03-estetica/index.html">
+          <div class="preview" style="background:linear-gradient(150deg,#f7e9e6,#efd7c9)">
+            <span class="tag" style="background:rgba(120,72,60,.55)">Estética</span>
+            <div class="mini">
+              <span class="chip" style="background:#b76e79;color:#fff">Lumière</span>
+              <div class="bar" style="width:60%;background:#b76e79"></div>
+              <div class="bar" style="width:40%;background:rgba(183,110,121,.35)"></div>
+              <div class="big" style="color:#6b4a3f;font-style:italic">Sua beleza, em equilíbrio</div>
+              <div class="row"><span class="pill" style="width:84px;background:#c9a227"></span><span class="pill" style="width:50px;background:rgba(183,110,121,.5)"></span></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="niche">Harmonização Facial</div>
+            <h3>Lumière Estética</h3>
+            <p>Suave, emocional e elegante. Storytelling de autoestima, paleta rosé/nude e itálicos sofisticados em destaque.</p>
+            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <!-- 04 IMÓVEIS -->
+        <a class="card" href="./04-imoveis/index.html">
+          <div class="preview" style="background:linear-gradient(150deg,#0e3a5f,#13507e)">
+            <span class="tag">Imóveis</span>
+            <div class="mini">
+              <span class="chip" style="background:#fff;color:#0e3a5f">Horizonte</span>
+              <div class="big" style="color:#fff">Avaliação gratuita do seu imóvel</div>
+              <div class="row">
+                <span class="pill" style="width:70px;height:34px;background:rgba(255,255,255,.9)"></span>
+                <span class="pill" style="width:70px;height:34px;background:rgba(255,255,255,.5)"></span>
+              </div>
+              <div class="row"><span class="pill" style="width:120px;background:#f4a23b"></span></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="niche">Corretor de Imóveis</div>
+            <h3>Horizonte Imóveis</h3>
+            <p>Direto e focado em lead. Hero forte, características em bullets, formulário curto e prova social de compradores.</p>
+            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <!-- 05 MARKETING -->
+        <a class="card" href="./05-marketing/index.html">
+          <div class="preview" style="background:linear-gradient(150deg,#1b0b3a,#3a0f6b 55%,#b81d72)">
+            <span class="tag">Tráfego Pago</span>
+            <div class="mini">
+              <span class="chip" style="background:#ff3da6;color:#fff">Tração</span>
+              <div class="bar" style="width:80%;background:#fff"></div>
+              <div class="big" style="color:#fff">+212% em vendas em 90 dias</div>
+              <div class="row">
+                <span class="pill" style="width:24px;height:38px;background:#7c3aed"></span>
+                <span class="pill" style="width:24px;height:26px;background:#ff3da6"></span>
+                <span class="pill" style="width:24px;height:44px;background:#22d3ee"></span>
+                <span class="pill" style="width:24px;height:30px;background:#a78bfa"></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="niche">Agência de Performance</div>
+            <h3>Tração Performance</h3>
+            <p>B2B, orientado a dados, estrutura AIDA. Gradientes vibrantes, números em destaque e diagnóstico gratuito como CTA.</p>
+            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <!-- 06 PSICOLOGIA -->
+        <a class="card" href="./06-psicologia/index.html">
+          <div class="preview" style="background:linear-gradient(150deg,#dfeae2,#cfe0e6)">
+            <span class="tag" style="background:rgba(60,90,80,.5)">Psicologia</span>
+            <div class="mini">
+              <span class="chip" style="background:#7a9b86;color:#fff">Espaço Sereno</span>
+              <div class="bar" style="width:55%;background:#7a9b86"></div>
+              <div class="bar" style="width:38%;background:rgba(122,155,134,.4)"></div>
+              <div class="big" style="color:#3f5a4d">Pedir ajuda também é força</div>
+              <div class="row"><span class="pill" style="width:96px;background:#7a9b86"></span></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="niche">Psicólogo · Terapia</div>
+            <h3>Espaço Sereno</h3>
+            <p>Acolhedor e humano, sem jargão clínico. Muito espaço em branco, tons calmos e um CTA suave para a primeira conversa.</p>
+            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <!-- 07 PET -->
+        <a class="card" href="./07-pet/index.html">
+          <div class="preview" style="background:linear-gradient(150deg,#36c5f0,#5ad1c3 60%,#ffd23f)">
+            <span class="tag" style="background:rgba(20,80,110,.55)">Pet &amp; Vet</span>
+            <div class="mini">
+              <span class="chip" style="background:#fff;color:#1f7aa3">🐾 AuMigo</span>
+              <div class="big" style="color:#fff">Cuidado de quem ama de verdade</div>
+              <div class="row">
+                <span class="pill" style="width:54px;background:#ff8a5c"></span>
+                <span class="pill" style="width:54px;background:#ffd23f"></span>
+                <span class="pill" style="width:54px;background:#fff"></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="niche">Pet Shop · Veterinária 24h</div>
+            <h3>AuMigo Pet &amp; Vet</h3>
+            <p>Afetuoso e caloroso. Cores amigáveis, ícones de patinhas e foco na confiança de quem ama o animal.</p>
+            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+        <!-- 08 ARQUITETURA -->
+        <a class="card" href="./08-arquitetura/index.html">
+          <div class="preview" style="background:linear-gradient(150deg,#1a1a18,#2b2a27)">
+            <span class="tag">Arquitetura</span>
+            <div class="mini">
+              <span class="chip" style="background:#e7e2d8;color:#1a1a18;letter-spacing:.2em">ÁTRIO</span>
+              <div class="big" style="color:#e7e2d8;font-weight:400;letter-spacing:.02em">Espaços que contam<br>histórias.</div>
+              <div class="row"><span class="pill" style="width:130px;height:8px;background:#9a9488"></span></div>
+              <div class="row"><span class="pill" style="width:70px;height:8px;background:rgba(231,226,216,.4)"></span></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="niche">Arquitetura &amp; Interiores</div>
+            <h3>Átrio Arquitetura</h3>
+            <p>Premium e editorial. Paleta neutra, muito espaço negativo, grid assimétrico de revista e storytelling de transformação.</p>
+            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO / WHY -->
+  <section class="why sec" id="processo">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Como eu trabalho</div>
+        <h2>Não é sobre fazer bonito. É sobre fazer converter.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="ic">🎯</div>
+          <h3>Uma página, um objetivo</h3>
+          <p>Cada landing tem um único CTA principal, repetido com estratégia ao longo da rolagem. Sem distração, sem fuga.</p>
+        </div>
+        <div class="why-item">
+          <div class="ic">📱</div>
+          <h3>Mobile-first de verdade</h3>
+          <p>A maior parte do tráfego de anúncio é mobile. Construo e testo no celular primeiro, depois adapto para o desktop.</p>
+        </div>
+        <div class="why-item">
+          <div class="ic">⚡</div>
+          <h3>Leve e rápida</h3>
+          <p>HTML semântico, CSS moderno, imagens otimizadas e zero peso desnecessário. Página rápida converte mais.</p>
+        </div>
+        <div class="why-item">
+          <div class="ic">🎨</div>
+          <h3>Identidade sob medida</h3>
+          <p>Cada nicho fala uma língua. Paleta, tipografia e copy nascem do público — nada de template reaproveitado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO / CTA -->
+  <section class="sec" id="contato">
+    <div class="wrap">
+      <div class="cta-box">
+        <h2>Quer uma landing assim para o seu negócio?</h2>
+        <p>Me conta o seu nicho e o seu objetivo. Eu te respondo com uma ideia de estrutura e um orçamento — sem compromisso.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20uma%20landing%20page." target="_blank" rel="noopener" class="btn btn-primary">Chamar no WhatsApp</a>
+          <a href="mailto:contato@verticestudio.com.br" class="btn btn-ghost">Enviar e-mail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong style="color:var(--ink)">Vértice</strong> · Landing pages de alta conversão</div>
+    <div class="links">
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#processo">Como trabalho</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div style="font-size:.85rem">Conteúdo demonstrativo e fictício · {ANO}</div>
+  </div>
+</footer>
+
+<script>
+  // Ano dinâmico
+  document.querySelector('footer .foot').lastElementChild.innerHTML =
+    'Conteúdo demonstrativo e fictício · ' + new Date().getFullYear();
+
+  // Menu mobile
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  // Reveal dos cards ao rolar
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { e.target.style.transitionDelay = (e.target.dataset.d || 0) + 'ms'; e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: .15 });
+  document.querySelectorAll('.card').forEach((c, i) => { c.dataset.d = (i % 3) * 80; io.observe(c); });
+</script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumière — Harmonização Facial com resultado natural</title>
+<meta name="description" content="Harmonização facial e estética avançada com naturalidade e cuidado. Realce o que já é seu, com leveza e segurança. Agende sua avaliação." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23b76e79'/%3E%3Cpath d='M50 26 C40 40 34 46 34 56 a16 16 0 0 0 32 0 C66 46 60 40 50 26 Z' fill='%23faf5f1'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --rose:#b76e79; --rose-d:#9c5763; --nude:#e7d3c4; --nude-l:#f3e7dd; --gold:#c2992f;
+    --cream:#faf5f1; --paper:#fffdfb; --ink:#5b4239; --soft:#8a7065; --line:#ecdfd6;
+    --ff-serif:'Cormorant Garamond',serif; --ff-sans:'Jost',sans-serif; --max:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff-sans);font-weight:300;color:var(--ink);background:var(--paper);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--ff-serif);font-weight:600;line-height:1.15;letter-spacing:.005em}
+  em{font-style:italic;color:var(--rose)}
+  .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(22px,5vw,46px)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-sans);font-weight:500;letter-spacing:.06em;text-transform:uppercase;font-size:.84rem;border-radius:999px;padding:15px 30px;cursor:pointer;border:1px solid transparent;transition:transform .2s,background .25s,color .25s}
+  .btn-rose{background:var(--rose);color:#fff}
+  .btn-rose:hover{background:var(--rose-d);transform:translateY(-2px)}
+  .btn-outline{border-color:var(--rose);color:var(--rose)}
+  .btn-outline:hover{background:var(--rose);color:#fff}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,253,251,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;flex-direction:column;line-height:1}
+  .brand b{font-family:var(--ff-serif);font-size:1.7rem;font-weight:600;letter-spacing:.06em;color:var(--rose)}
+  .brand small{font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--soft);margin-top:3px;padding-left:3px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{color:var(--soft);font-size:.86rem;letter-spacing:.04em;font-weight:400;transition:color .2s}
+  .nav-links a:hover{color:var(--rose)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:999px;width:44px;height:44px;color:var(--rose);font-size:1.2rem;cursor:pointer}
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,var(--nude-l),var(--cream));position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,60px);align-items:center;padding-block:clamp(56px,8vw,96px)}
+  .hero .eyebrow{font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:22px}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem)}
+  .hero p{font-size:1.16rem;color:var(--soft);margin-top:24px;max-width:46ch;font-weight:300}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .hero-figure{position:relative}
+  .hero-figure .img{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(155,87,99,.5)}
+  .hero-figure img{width:100%;height:100%;object-fit:cover}
+  .hero-figure .tagcard{position:absolute;bottom:24px;left:-18px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;box-shadow:0 18px 40px -20px rgba(91,66,57,.35)}
+  .hero-figure .tagcard b{font-family:var(--ff-serif);font-size:1.5rem;color:var(--rose);display:block}
+  .hero-figure .tagcard span{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+  .deco{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(183,110,121,.18),transparent 70%);pointer-events:none}
+
+  section{padding:clamp(60px,9vw,104px) 0}
+  .head{max-width:60ch;margin-bottom:50px}
+  .head.center{text-align:center;margin-inline:auto}
+  .head .kicker{font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px}
+  .head h2{font-size:clamp(2rem,4.8vw,3.2rem)}
+  .head p{color:var(--soft);font-size:1.12rem;margin-top:16px;font-weight:300}
+
+  /* Dores 1a pessoa */
+  .pains{background:var(--cream)}
+  .pain-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .pain{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px 30px;position:relative}
+  .pain .q{font-family:var(--ff-serif);font-style:italic;font-size:1.5rem;color:var(--ink);line-height:1.35}
+  .pain .q::before{content:"“";color:var(--rose);font-size:1.6rem}
+  .pain .q::after{content:"”";color:var(--rose)}
+  .pain small{display:block;margin-top:14px;color:var(--soft);font-size:.86rem;letter-spacing:.06em}
+
+  /* Diferenciais */
+  .diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+  .diff{text-align:center;padding:14px}
+  .diff .ic{width:74px;height:74px;border-radius:50%;background:var(--nude-l);border:1px solid var(--line);display:grid;place-items:center;margin:0 auto 20px;font-size:1.7rem}
+  .diff h3{font-size:1.45rem;color:var(--rose);margin-bottom:8px}
+  .diff p{color:var(--soft);font-size:.98rem}
+
+  /* Sobre */
+  .about{background:linear-gradient(180deg,var(--paper),var(--nude-l))}
+  .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(34px,6vw,64px);align-items:center}
+  .about-photo{aspect-ratio:4/5;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(155,87,99,.45)}
+  .about-photo img{width:100%;height:100%;object-fit:cover}
+  .about h2{font-size:clamp(2rem,4.6vw,3rem)}
+  .about .sign{font-family:var(--ff-serif);font-style:italic;font-size:1.7rem;color:var(--rose);margin-top:24px}
+  .about p{color:var(--soft);margin-top:18px;font-size:1.08rem}
+  .about .mini{display:flex;gap:30px;margin-top:26px;flex-wrap:wrap}
+  .about .mini b{font-family:var(--ff-serif);font-size:1.9rem;color:var(--rose);display:block}
+  .about .mini span{font-size:.82rem;color:var(--soft);text-transform:uppercase;letter-spacing:.08em}
+
+  /* Processo */
+  .proc{background:var(--rose);color:#fff}
+  .proc .head h2,.proc .head .kicker{color:#fff}
+  .proc .head .kicker{color:var(--nude-l)}
+  .proc-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.2);border-radius:18px;overflow:hidden}
+  .pstep{background:var(--rose);padding:34px 28px}
+  .pstep .n{font-family:var(--ff-serif);font-size:2.6rem;color:var(--nude-l);line-height:1}
+  .pstep h3{color:#fff;font-size:1.4rem;margin:10px 0 8px}
+  .pstep p{color:rgba(255,255,255,.85);font-size:.96rem}
+
+  /* Antes/depois */
+  .ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .ba{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+  .ba .pics{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+  .ba figure{margin:0;position:relative;aspect-ratio:1}
+  .ba figure img{width:100%;height:100%;object-fit:cover}
+  .ba figcaption{position:absolute;bottom:0;left:0;right:0;text-align:center;font-family:var(--ff-sans);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;padding:6px;background:rgba(91,66,57,.55);color:#fff}
+  .ba figure:last-child figcaption{background:rgba(183,110,121,.85)}
+  .ba .cap{padding:18px 22px;text-align:center;color:var(--soft);font-style:italic;font-family:var(--ff-serif);font-size:1.15rem}
+
+  /* FAQ */
+  .faq{background:var(--cream)}
+  .faq-list{max-width:800px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+  .acc{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .acc summary{list-style:none;cursor:pointer;padding:22px 26px;display:flex;justify-content:space-between;gap:14px;align-items:center;font-family:var(--ff-serif);font-size:1.3rem;color:var(--ink)}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc .plus{color:var(--rose);font-size:1.4rem;transition:transform .25s}
+  .acc[open] .plus{transform:rotate(45deg)}
+  .acc .body{padding:0 26px 24px;color:var(--soft)}
+
+  /* Final */
+  .final{background:linear-gradient(135deg,var(--nude-l),var(--cream));text-align:center}
+  .final h2{font-size:clamp(2.1rem,5vw,3.4rem);max-width:20ch;margin-inline:auto}
+  .final p{color:var(--soft);max-width:48ch;margin:18px auto 0;font-size:1.12rem}
+  .final .btn{margin-top:30px}
+  .final small{display:block;margin-top:18px;color:var(--soft);font-size:.84rem;letter-spacing:.06em}
+
+  footer{background:var(--ink);color:#d9c8bf;padding:54px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+  .foot-grid b{font-family:var(--ff-serif);color:#fff;font-size:1.4rem;display:block;margin-bottom:6px}
+  .foot-grid h4{color:#fff;font-weight:500;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin-bottom:14px}
+  .foot-grid a,.foot-grid p{color:#d9c8bf;font-size:.92rem;display:block;margin-bottom:8px}
+  .foot-grid a:hover{color:var(--nude)}
+  .disc{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;font-size:.8rem;color:#a8938a}
+
+  .wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(37,211,102,.7);transition:transform .2s}
+  .wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
+
+  @media(max-width:840px){.hero .wrap,.about .wrap{grid-template-columns:1fr}.hero-figure{max-width:420px;margin-inline:auto;order:-1}.about-photo{max-width:380px;margin-inline:auto}.foot-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.nav-links{display:none}.nav-links.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;background:var(--paper);padding:18px 26px;gap:16px;border-bottom:1px solid var(--line)}.menu-btn{display:grid;place-items:center}.foot-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="brand"><b>Lumière</b><small>Estética &amp; Harmonização</small></a>
+    <nav class="nav-links" id="nav">
+      <a href="#identifica">Você se identifica?</a>
+      <a href="#sobre">Sobre a Dra.</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Lumi%C3%A8re." target="_blank" rel="noopener" class="btn btn-rose" style="padding:11px 22px">Agendar avaliação</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="deco" style="width:340px;height:340px;top:-80px;right:-60px"></div>
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Harmonização facial · Estética avançada</div>
+        <h1>A sua beleza, em <em>equilíbrio</em>.</h1>
+        <p>Realçar o que já é seu — com naturalidade, leveza e a segurança de quem cuida de cada detalhe. Aqui, ninguém vai perceber o procedimento. Só vão perceber você mais confiante.</p>
+        <div class="hero-cta">
+          <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Lumi%C3%A8re." target="_blank" rel="noopener" class="btn btn-rose">Agendar minha avaliação</a>
+          <a href="#processo" class="btn btn-outline">Entender o processo</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <div class="img"><img src="https://picsum.photos/seed/skincareface/700/880" alt="Mulher com pele iluminada e expressão serena" /></div>
+        <div class="tagcard"><b>+1.200</b><span>rostos cuidados</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DORES 1a pessoa -->
+  <section class="pains" id="identifica">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Talvez você pense assim</div>
+        <h2>Aquele pensamento que volta sempre que você se olha no espelho</h2>
+      </div>
+      <div class="pain-list">
+        <div class="pain"><div class="q">Ando me sentindo cansada nas fotos, mesmo quando estou bem.</div><small>— e isso mexe com a sua confiança</small></div>
+        <div class="pain"><div class="q">Tenho medo de fazer e ficar artificial, com cara de &lsquo;feita&rsquo;.</div><small>— o medo do exagero é legítimo</small></div>
+        <div class="pain"><div class="q">Queria me sentir bem comigo, sem precisar explicar nada pra ninguém.</div><small>— e merece ser ouvida sem julgamento</small></div>
+        <div class="pain"><div class="q">Já adiei tanto esse cuidado comigo mesma…</div><small>— talvez seja a hora de se priorizar</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Por que a Lumière</div>
+        <h2>Cuidado que começa <em>antes</em> do procedimento</h2>
+      </div>
+      <div class="diff-grid">
+        <div class="diff"><div class="ic">🌿</div><h3>Naturalidade</h3><p>Resultados harmônicos e discretos, respeitando suas proporções e a sua essência.</p></div>
+        <div class="diff"><div class="ic">🩺</div><h3>Avaliação completa</h3><p>Antes de qualquer indicação, um estudo cuidadoso do seu rosto e dos seus objetivos.</p></div>
+        <div class="diff"><div class="ic">✨</div><h3>Materiais premium</h3><p>Produtos de marcas reconhecidas e protocolos atualizados, com toda a segurança.</p></div>
+        <div class="diff"><div class="ic">💗</div><h3>Acolhimento</h3><p>Um ambiente tranquilo, sem pressa e sem pressão, do primeiro contato ao retorno.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="wrap">
+      <div class="about-photo"><img src="https://picsum.photos/seed/doctorwoman/640/800" alt="Retrato da profissional responsável" loading="lazy" /></div>
+      <div>
+        <div class="kicker" style="font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px">Quem vai cuidar de você</div>
+        <h2>Prazer, sou a Dra. Marina Lopes</h2>
+        <p class="sign">“Beleza de verdade é quando você se reconhece no espelho.”</p>
+        <p>Há mais de 10 anos dedico minha carreira à estética facial com um princípio simples: cada rosto tem uma história, e o meu papel é realçá-la — nunca apagá-la. Trabalho com calma, escuto antes de indicar e só faço o que vai deixar você se sentindo mais você.</p>
+        <div class="mini">
+          <div><b>10+</b><span>anos de experiência</span></div>
+          <div><b>+1.200</b><span>pacientes atendidas</span></div>
+          <div><b>100%</b><span>avaliação antes de tudo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="proc" id="processo">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Como funciona</div>
+        <h2>Um caminho leve, em quatro etapas</h2>
+      </div>
+      <div class="proc-steps">
+        <div class="pstep"><div class="n">01</div><h3>Conversa</h3><p>Você conta o que te incomoda e o que deseja. Sem julgamento, sem roteiro de venda.</p></div>
+        <div class="pstep"><div class="n">02</div><h3>Avaliação</h3><p>Estudo do seu rosto e indicação do que faz sentido — e do que não faz — pra você.</p></div>
+        <div class="pstep"><div class="n">03</div><h3>Procedimento</h3><p>Realizado com técnica, conforto e toda a segurança, no seu tempo.</p></div>
+        <div class="pstep"><div class="n">04</div><h3>Acompanhamento</h3><p>Retorno e cuidado pós-procedimento pra garantir o melhor resultado.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES/DEPOIS -->
+  <section id="resultados">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Antes &amp; depois</div>
+        <h2>Resultados <em>naturais</em>, do jeito que devem ser</h2>
+        <p>Imagens ilustrativas. Cada resultado é individual e definido durante a avaliação.</p>
+      </div>
+      <div class="ba-grid">
+        <div class="ba"><div class="pics"><figure><img src="https://picsum.photos/seed/face-b1/400/400" alt="Antes"><figcaption>Antes</figcaption></figure><figure><img src="https://picsum.photos/seed/face-a1/400/400" alt="Depois"><figcaption>Depois</figcaption></figure></div><div class="cap">Contorno facial suavizado</div></div>
+        <div class="ba"><div class="pics"><figure><img src="https://picsum.photos/seed/face-b2/400/400" alt="Antes"><figcaption>Antes</figcaption></figure><figure><img src="https://picsum.photos/seed/face-a2/400/400" alt="Depois"><figcaption>Depois</figcaption></figure></div><div class="cap">Hidratação e viço da pele</div></div>
+        <div class="ba"><div class="pics"><figure><img src="https://picsum.photos/seed/face-b3/400/400" alt="Antes"><figcaption>Antes</figcaption></figure><figure><img src="https://picsum.photos/seed/face-a3/400/400" alt="Depois"><figcaption>Depois</figcaption></figure></div><div class="cap">Olhar mais descansado</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="head center"><div class="kicker">Dúvidas frequentes</div><h2>Para você decidir com tranquilidade</h2></div>
+      <div class="faq-list">
+        <details class="acc" open><summary>Vou ficar com aparência artificial? <span class="plus">+</span></summary><div class="body">Esse é justamente o nosso compromisso: naturalidade. Trabalhamos para realçar suas proporções, não para mudá-las. O objetivo é que ninguém perceba o procedimento — só a sua confiança.</div></details>
+        <details class="acc"><summary>O procedimento dói? <span class="plus">+</span></summary><div class="body">Utilizamos recursos de conforto e anestésicos tópicos quando indicado. A maior parte das pacientes relata um incômodo leve e bem tolerável.</div></details>
+        <details class="acc"><summary>Em quanto tempo vejo o resultado? <span class="plus">+</span></summary><div class="body">Varia conforme o procedimento. Alguns trazem resultado imediato, outros se revelam ao longo de alguns dias. Tudo é explicado na avaliação.</div></details>
+        <details class="acc"><summary>Preciso decidir na hora da avaliação? <span class="plus">+</span></summary><div class="body">De forma alguma. A avaliação é um momento de escuta e orientação. Você decide com calma, no seu tempo.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Você merece se olhar no espelho e <em>gostar</em> do que vê</h2>
+      <p>Comece com uma avaliação acolhedora, sem compromisso. Vamos conversar sobre você.</p>
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Lumi%C3%A8re." target="_blank" rel="noopener" class="btn btn-rose">Agendar minha avaliação</a>
+      <small>Atendimento humanizado · Ambiente acolhedor · Sigilo total</small>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <b>Lumière</b>
+        <p>Estética &amp; Harmonização Facial<br>Realçar com naturalidade.</p>
+        <p>Rua das Flores, 250 · Sala 12<br>Cidade Fictícia · UF</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="#identifica">Você se identifica?</a>
+        <a href="#sobre">Sobre a Dra.</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#faq">Dúvidas</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp (00) 00000-0000</a>
+        <a href="#">@lumiere.estetica</a>
+        <a href="mailto:contato@lumiereestetica.com.br">contato@lumiereestetica.com.br</a>
+      </div>
+    </div>
+    <div class="disc">Conteúdo demonstrativo e fictício, criado para fins de portfólio. Nomes, depoimentos, imagens de antes/depois e dados de contato são ilustrativos e não representam pessoas, profissionais ou resultados reais. Procedimentos estéticos devem ser sempre avaliados individualmente por profissional habilitado.</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Lumi%C3%A8re." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.9 6.5L3 29l7.2-2.3c1.8 1 3.7 1.5 5.8 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.3 1.3 1.4-4.1-.3-.4c-1-1.6-1.6-3.4-1.6-5.3 0-5.6 4.5-10.1 10.1-10.1 5.6 0 10.1 4.5 10.1 10.1S21.6 25.6 16 25.6zm5.5-7.6c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  document.querySelectorAll('.acc').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.acc').forEach(o=>{if(o!==d)o.open=false})}));
+</script>
+</body>
+</html>
