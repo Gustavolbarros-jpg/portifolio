@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Studio Alinhar — Alinhadores invisíveis e ortodontia digital</title>
+<meta name="description" content="Conquiste o sorriso que você merece com alinhadores invisíveis: discreto, confortável e previsível. Planejamento digital 3D e acompanhamento próximo. Agende sua avaliação." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231f2a33'/%3E%3Cpath d='M30 38 c4-8 36-8 40 0 c3 6-2 30-8 32 c-5 2-7-8-12-8 c-5 0-7 10-12 8 c-6-2-11-26-8-32z' fill='none' stroke='%23c9a45c' stroke-width='4'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --gold:#c9a45c; --gold-d:#a9863f; --charcoal:#1f2a33; --charcoal-2:#15202a; --ink:#33424d;
+    --paper:#ffffff; --cream:#faf7f2; --cream-2:#f2ece1; --soft:#76858f; --line:#eae3d7;
+    --ff-serif:'Marcellus',serif; --ff-sans:'Mulish',sans-serif; --max:1160px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--ff-sans);font-weight:400;color:var(--ink);background:var(--paper);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--ff-serif);font-weight:400;line-height:1.16;letter-spacing:.005em}
+  .wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(22px,5vw,46px)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-sans);font-weight:600;letter-spacing:.04em;border-radius:6px;padding:15px 30px;font-size:.96rem;cursor:pointer;border:1px solid transparent;transition:transform .2s,background .25s,color .25s}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-gold:hover{background:var(--gold-d);transform:translateY(-2px)}
+  .btn-dark{background:var(--charcoal);color:#fff}
+  .btn-dark:hover{background:var(--charcoal-2);transform:translateY(-2px)}
+  .btn-outline{border-color:var(--gold);color:var(--gold-d)}
+  .btn-outline:hover{background:var(--gold);color:#fff}
+  .gold{color:var(--gold-d)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;flex-direction:column;line-height:1.05}
+  .brand b{font-family:var(--ff-serif);font-size:1.55rem;letter-spacing:.04em}
+  .brand small{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--soft);margin-top:3px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{color:var(--soft);font-size:.92rem;font-weight:600;transition:color .2s}
+  .nav-links a:hover{color:var(--gold-d)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;width:44px;height:44px;color:var(--charcoal);font-size:1.2rem;cursor:pointer}
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,var(--cream),var(--paper));position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,60px);align-items:center;padding-block:clamp(56px,8vw,100px)}
+  .hero .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-d);font-weight:700;margin-bottom:22px}
+  .hero h1{font-size:clamp(2.4rem,5.6vw,4rem);max-width:15ch}
+  .hero h1 em{font-style:italic;color:var(--gold-d)}
+  .hero p{font-size:1.14rem;color:var(--soft);margin-top:22px;max-width:46ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+  .hero-trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;padding-top:26px;border-top:1px solid var(--line)}
+  .hero-trust .t b{font-family:var(--ff-serif);font-size:1.9rem;color:var(--gold-d);display:block}
+  .hero-trust .t span{font-size:.82rem;color:var(--soft);text-transform:uppercase;letter-spacing:.08em}
+  .hero-figure{position:relative}
+  .hero-figure .img{aspect-ratio:4/5;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(31,42,51,.45)}
+  .hero-figure img{width:100%;height:100%;object-fit:cover}
+  .hero-figure .chip{position:absolute;bottom:20px;left:-18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:0 18px 40px -20px rgba(31,42,51,.35);display:flex;align-items:center;gap:12px}
+  .hero-figure .chip .ic{width:40px;height:40px;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;font-size:1.1rem}
+  .hero-figure .chip b{font-family:var(--ff-serif);font-size:1rem;color:var(--charcoal);display:block}
+  .hero-figure .chip span{font-size:.78rem;color:var(--soft)}
+
+  section{padding:clamp(58px,8vw,100px) 0}
+  .head{max-width:60ch;margin-bottom:48px}
+  .head.center{text-align:center;margin-inline:auto}
+  .head .kicker{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d);font-weight:700;margin-bottom:14px}
+  .head h2{font-size:clamp(1.9rem,4.4vw,2.9rem);color:var(--charcoal)}
+  .head p{color:var(--soft);font-size:1.1rem;margin-top:14px}
+
+  /* Identificação */
+  .pains{background:var(--cream)}
+  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  .pain{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:28px}
+  .pain .ic{font-size:1.6rem;margin-bottom:10px}
+  .pain h3{font-size:1.2rem;color:var(--charcoal);margin-bottom:6px}
+  .pain p{color:var(--soft);font-size:.96rem}
+
+  /* Como funciona */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .step{padding:30px 24px 30px 0;border-top:2px solid var(--gold)}
+  .step .n{font-family:var(--ff-serif);font-size:2.4rem;color:var(--gold-d);line-height:1;margin-bottom:14px}
+  .step h3{font-size:1.25rem;color:var(--charcoal);margin-bottom:8px}
+  .step p{color:var(--soft);font-size:.95rem}
+
+  /* Diferenciais (faixa escura) */
+  .why{background:var(--charcoal);color:#fff}
+  .why .head h2{color:#fff}.why .head .kicker{color:var(--gold)}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+  .why-item .ic{width:50px;height:50px;border-radius:50%;border:1px solid rgba(201,164,92,.5);color:var(--gold);display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px}
+  .why-item h3{color:#fff;font-size:1.25rem;margin-bottom:8px}
+  .why-item p{color:#aeb9c1;font-size:.96rem}
+
+  /* Casos */
+  .cases{background:var(--cream)}
+  .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .case{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center}
+  .case .ic{font-size:1.8rem;margin-bottom:8px}
+  .case b{font-family:var(--ff-serif);font-size:1.15rem;color:var(--charcoal);display:block;margin-bottom:4px}
+  .case span{color:var(--soft);font-size:.9rem}
+
+  /* Antes/depois */
+  .ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .ba{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
+  .ba .pics{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+  .ba figure{margin:0;position:relative;aspect-ratio:1}
+  .ba figure img{width:100%;height:100%;object-fit:cover}
+  .ba figcaption{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;padding:6px;background:rgba(31,42,51,.6);color:#fff}
+  .ba figure:last-child figcaption{background:rgba(201,164,92,.9)}
+  .ba .cap{padding:16px 20px;text-align:center;color:var(--soft);font-family:var(--ff-serif);font-size:1.1rem}
+
+  /* FAQ */
+  .faq-list{max-width:820px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+  .acc{background:var(--cream);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .acc summary{list-style:none;cursor:pointer;padding:22px 26px;display:flex;justify-content:space-between;gap:14px;align-items:center;font-family:var(--ff-serif);font-size:1.2rem;color:var(--charcoal)}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc .plus{color:var(--gold-d);font-size:1.4rem;transition:transform .25s}
+  .acc[open] .plus{transform:rotate(45deg)}
+  .acc .body{padding:0 26px 24px;color:var(--soft)}
+
+  /* Final */
+  .final{background:linear-gradient(rgba(21,32,42,.92),rgba(31,42,51,.94)),url("https://picsum.photos/seed/dentalsmile/1600/700") center/cover;color:#fff;text-align:center}
+  .final h2{color:#fff;font-size:clamp(2rem,4.8vw,3.2rem);max-width:20ch;margin-inline:auto}
+  .final h2 em{font-style:italic;color:var(--gold)}
+  .final p{color:#cdd6dc;max-width:48ch;margin:18px auto 0;font-size:1.1rem}
+  .final .btn{margin-top:30px}
+  .final small{display:block;margin-top:18px;color:#9fb0ba}
+
+  footer{background:var(--charcoal-2);color:#9fb0ba;padding:54px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+  .foot-grid b.brand{font-family:var(--ff-serif);color:#fff;font-size:1.4rem;display:block;margin-bottom:8px}
+  .foot-grid h4{color:#fff;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+  .foot-grid a,.foot-grid p{color:#9fb0ba;font-size:.92rem;display:block;margin-bottom:8px}.foot-grid a:hover{color:var(--gold)}
+  .disc{border-top:1px solid rgba(255,255,255,.1);margin-top:38px;padding-top:22px;font-size:.8rem;color:#6f828d}
+
+  .wa{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(37,211,102,.7);transition:transform .2s}
+  .wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
+
+  @media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-figure{max-width:400px;margin-inline:auto;order:-1}.steps{grid-template-columns:1fr 1fr}.foot-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.nav-links{display:none}.nav-links.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 26px;gap:16px;border-bottom:1px solid var(--line)}.menu-btn{display:grid;place-items:center}.steps{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="brand"><b>Studio Alinhar</b><small>Ortodontia Digital</small></a>
+    <nav class="nav-links" id="nav">
+      <a href="#identifica">Você se identifica?</a>
+      <a href="#como">Como funciona</a>
+      <a href="#casos">Casos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="https://wa.me/5581991134753?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20alinhadores." target="_blank" rel="noopener" class="btn btn-gold" style="padding:11px 22px">Agendar avaliação</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Alinhadores invisíveis · Ortodontia digital</div>
+        <h1>O sorriso que você merece, de forma <em>discreta</em>.</h1>
+        <p>Alinhadores transparentes, removíveis e sob medida. Endireite seus dentes sem aparelho metálico aparente — com planejamento digital e previsibilidade do começo ao fim.</p>
+        <div class="hero-cta">
+          <a href="https://wa.me/5581991134753?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20alinhadores." target="_blank" rel="noopener" class="btn btn-gold">Agendar minha avaliação</a>
+          <a href="#como" class="btn btn-outline">Como funciona</a>
+        </div>
+        <div class="hero-trust">
+          <div class="t"><b>+800</b><span>sorrisos alinhados</span></div>
+          <div class="t"><b>3D</b><span>planejamento digital</span></div>
+          <div class="t"><b>0</b><span>aparelho aparente</span></div>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <div class="img"><img src="https://picsum.photos/seed/smileportrait/700/880" alt="Pessoa com sorriso alinhado e confiante" /></div>
+        <div class="chip"><span class="ic">✨</span><span><b>Quase invisível</b><span>ninguém percebe</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDENTIFICAÇÃO -->
+  <section class="pains" id="identifica">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Talvez seja você</div>
+        <h2>Você esconde o sorriso nas fotos?</h2>
+        <p>Se algum destes pontos te incomoda, os alinhadores invisíveis podem ser a solução que você procurava.</p>
+      </div>
+      <div class="pain-grid">
+        <div class="pain"><div class="ic">😬</div><h3>Dentes tortos</h3><p>Apinhamento ou desalinhamento que te deixa inseguro ao sorrir e aparecer.</p></div>
+        <div class="pain"><div class="ic">🦷</div><h3>Espaços entre os dentes</h3><p>Aqueles vãos que você gostaria de fechar, mas sem usar aparelho metálico.</p></div>
+        <div class="pain"><div class="ic">⏳</div><h3>Sem tempo a perder</h3><p>Vida corrida e vergonha do aparelho fixo no trabalho e nas reuniões.</p></div>
+        <div class="pain"><div class="ic">❓</div><h3>Medo do desconhecido</h3><p>Quer saber quanto tempo leva e como vai ficar antes mesmo de começar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Simples e tecnológico</div>
+        <h2>Seu tratamento em 4 etapas</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><h3>Escaneamento 3D</h3><p>Sem aquela massinha desconfortável: um scanner digital captura seus dentes em minutos.</p></div>
+        <div class="step"><div class="n">02</div><h3>Plano do sorriso</h3><p>Você vê, na tela, a simulação do resultado final antes mesmo de começar.</p></div>
+        <div class="step"><div class="n">03</div><h3>Alinhadores sob medida</h3><p>Recebe sequências de alinhadores transparentes, trocados conforme o avanço.</p></div>
+        <div class="step"><div class="n">04</div><h3>Acompanhamento</h3><p>Retornos periódicos para garantir que tudo evolua conforme o planejado.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="why">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Por que alinhadores</div>
+        <h2>As vantagens de tratar com a gente</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><div class="ic">👁️</div><h3>Discreto</h3><p>Transparentes, passam despercebidos no dia a dia, no trabalho e nas fotos.</p></div>
+        <div class="why-item"><div class="ic">🍽️</div><h3>Removível</h3><p>Você tira para comer e escovar os dentes. Sem restrição alimentar.</p></div>
+        <div class="why-item"><div class="ic">📊</div><h3>Previsível</h3><p>Planejamento digital mostra cada passo e o resultado esperado desde o início.</p></div>
+        <div class="why-item"><div class="ic">😌</div><h3>Confortável</h3><p>Sem fios e bráquetes que machucam. Material liso e sob medida para você.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS -->
+  <section class="cases" id="casos">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">O que tratamos</div>
+        <h2>Casos indicados para alinhadores</h2>
+      </div>
+      <div class="case-grid">
+        <div class="case"><div class="ic">🦷</div><b>Apinhamento</b><span>dentes amontoados</span></div>
+        <div class="case"><div class="ic">↔️</div><b>Espaçamento</b><span>vãos entre dentes</span></div>
+        <div class="case"><div class="ic">⤵️</div><b>Mordida cruzada</b><span>desalinhamento</span></div>
+        <div class="case"><div class="ic">⤴️</div><b>Sobremordida</b><span>dentes sobrepostos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES/DEPOIS -->
+  <section id="resultados">
+    <div class="wrap">
+      <div class="head center">
+        <div class="kicker">Antes &amp; depois</div>
+        <h2>Sorrisos transformados</h2>
+        <p>Imagens ilustrativas. Cada caso é avaliado e planejado individualmente.</p>
+      </div>
+      <div class="ba-grid">
+        <div class="ba"><div class="pics"><figure><img src="https://picsum.photos/seed/teeth-b1/400/400" alt="Antes" loading="lazy"><figcaption>Antes</figcaption></figure><figure><img src="https://picsum.photos/seed/teeth-a1/400/400" alt="Depois" loading="lazy"><figcaption>Depois</figcaption></figure></div><div class="cap">Fechamento de espaços</div></div>
+        <div class="ba"><div class="pics"><figure><img src="https://picsum.photos/seed/teeth-b2/400/400" alt="Antes" loading="lazy"><figcaption>Antes</figcaption></figure><figure><img src="https://picsum.photos/seed/teeth-a2/400/400" alt="Depois" loading="lazy"><figcaption>Depois</figcaption></figure></div><div class="cap">Correção de apinhamento</div></div>
+        <div class="ba"><div class="pics"><figure><img src="https://picsum.photos/seed/teeth-b3/400/400" alt="Antes" loading="lazy"><figcaption>Antes</figcaption></figure><figure><img src="https://picsum.photos/seed/teeth-a3/400/400" alt="Depois" loading="lazy"><figcaption>Depois</figcaption></figure></div><div class="cap">Alinhamento do sorriso</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pains" id="faq">
+    <div class="wrap">
+      <div class="head center"><div class="kicker">Dúvidas frequentes</div><h2>Para decidir com segurança</h2></div>
+      <div class="faq-list">
+        <details class="acc" open><summary>Os alinhadores doem? <span class="plus">+</span></summary><div class="body">Costumam causar apenas uma leve pressão nos primeiros dias de cada troca — sinal de que estão trabalhando. É bem mais confortável que o aparelho fixo tradicional.</div></details>
+        <details class="acc"><summary>Quanto tempo dura o tratamento? <span class="plus">+</span></summary><div class="body">Varia conforme cada caso, normalmente de alguns meses a pouco mais de um ano. Na avaliação, o planejamento digital estima o seu tempo.</div></details>
+        <details class="acc"><summary>Preciso usar o dia todo? <span class="plus">+</span></summary><div class="body">O ideal é usar a maior parte do dia, removendo apenas para comer e higienizar. Quanto mais disciplina, melhor o resultado e mais rápido o tratamento.</div></details>
+        <details class="acc"><summary>Como sei se posso fazer? <span class="plus">+</span></summary><div class="body">A melhor forma é a avaliação inicial. Nela, verificamos se o seu caso é indicado para alinhadores e mostramos a simulação do resultado.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Comece pelo seu <em>sorriso planejado</em></h2>
+      <p>Agende uma avaliação e veja, na tela, como o seu sorriso pode ficar — sem compromisso.</p>
+      <a href="https://wa.me/5581991134753?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20alinhadores." target="_blank" rel="noopener" class="btn btn-gold">Agendar minha avaliação</a>
+      <small>Avaliação inicial · Planejamento digital · Atendimento próximo</small>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <b class="brand">Studio Alinhar</b>
+        <p>Ortodontia digital e alinhadores invisíveis. Um sorriso planejado para você.</p>
+        <p>Rua do Sorriso, 100 · Sala 5<br>Cidade Fictícia · UF</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="#identifica">Você se identifica?</a>
+        <a href="#como">Como funciona</a>
+        <a href="#casos">Casos</a>
+        <a href="#faq">Dúvidas</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5581991134753" target="_blank" rel="noopener">WhatsApp (81) 99113-4753</a>
+        <a href="#">@studio.alinhar</a>
+        <a href="mailto:contato@studioalinhar.com.br">contato@studioalinhar.com.br</a>
+      </div>
+    </div>
+    <div class="disc">Conteúdo demonstrativo e fictício, criado para fins de portfólio. Nome da clínica, CRO, depoimentos, imagens de antes/depois e dados de contato são ilustrativos e não representam profissionais, pacientes ou resultados reais. Tratamentos ortodônticos devem ser avaliados individualmente por cirurgião-dentista habilitado.</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/5581991134753?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20alinhadores." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.9 6.5L3 29l7.2-2.3c1.8 1 3.7 1.5 5.8 1.5 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.3 1.3 1.4-4.1-.3-.4c-1-1.6-1.6-3.4-1.6-5.3 0-5.6 4.5-10.1 10.1-10.1 5.6 0 10.1 4.5 10.1 10.1S21.6 25.6 16 25.6zm5.5-7.6c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+  const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  document.querySelectorAll('.acc').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.acc').forEach(o=>{if(o!==d)o.open=false})}));
+</script>
+</body>
+</html>

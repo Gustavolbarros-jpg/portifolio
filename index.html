@@ -83,7 +83,7 @@
   .card:hover .card-link .arrow{transform:translateX(5px)}
 
   /* Projetos no ar (clientes reais) */
-  .real .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .real .grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:26px}
   .rcard{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
   .rcard:hover{transform:translateY(-6px);border-color:#2b3a55;box-shadow:0 26px 50px -24px rgba(0,0,0,.7)}
   .browser{position:relative}
@@ -142,8 +142,7 @@
   <div class="wrap nav">
     <a href="#topo" class="logo"><span class="mark">V</span> Vértice</a>
     <nav class="nav-links" id="nav">
-      <a href="#clientes">Clientes</a>
-      <a href="#trabalhos">Demonstrações</a>
+      <a href="#projetos">Projetos</a>
       <a href="#processo">Como trabalho</a>
       <a href="#contato">Contato</a>
       <a href="#contato" class="btn btn-primary">Quero um orçamento</a>
@@ -161,255 +160,245 @@
       <h1>Landing pages que <span class="grad">convertem</span>, para qualquer nicho.</h1>
       <p class="lead">Sites reais publicados para clientes e demonstrações em nichos variados. Cada projeto é desenhado do zero com identidade visual, tom de copy e estrutura próprios — nada de template reaproveitado.</p>
       <div class="hero-cta">
-        <a href="#clientes" class="btn btn-primary">Ver projetos no ar →</a>
+        <a href="#projetos" class="btn btn-primary">Ver projetos no ar →</a>
         <a href="#contato" class="btn btn-ghost">Falar comigo</a>
       </div>
       <div class="stats">
-        <div class="stat"><div class="num">2</div><div class="lbl">clientes no ar</div></div>
-        <div class="stat"><div class="num">8</div><div class="lbl">nichos demonstrados</div></div>
+        <div class="stat"><div class="num">10</div><div class="lbl">projetos no ar</div></div>
+        <div class="stat"><div class="num">9</div><div class="lbl">nichos diferentes</div></div>
         <div class="stat"><div class="num">100%</div><div class="lbl">mobile-first</div></div>
         <div class="stat"><div class="num">1</div><div class="lbl">objetivo por página</div></div>
       </div>
     </div>
   </section>
 
-  <!-- PROJETOS NO AR (CLIENTES REAIS) -->
-  <section class="sec real" id="clientes">
+  <!-- PROJETOS NO AR -->
+  <section class="sec real" id="projetos">
     <div class="wrap">
       <div class="sec-head">
-        <div class="kicker">Clientes no ar</div>
-        <h2>Sites reais, publicados e funcionando.</h2>
-        <p>Projetos que desenvolvi para clientes e que estão no ar agora. Clique para visitar cada um e ver o trabalho completo, ao vivo.</p>
+        <div class="kicker">Portfólio · Projetos no ar</div>
+        <h2>Dez projetos, dez identidades.</h2>
+        <p>Sites publicados e funcionando. Clique em qualquer um para visitar o projeto completo — cada um com identidade visual, copy e estrutura próprias.</p>
       </div>
 
       <div class="grid2">
 
-        <!-- DRA. MANUELA MOREIRA -->
-        <article class="rcard">
+        <!-- 01 · DR. GUSTAVO (REAL) -->
+        <a class="rcard" href="https://www.drgustavoduarte.com/" target="_blank" rel="noopener">
           <div class="browser">
             <span class="live"><span class="dot"></span> No ar</span>
-            <div class="barr">
-              <i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i>
-              <span class="u">🔒 dramanuelamoreira.com.br</span>
-            </div>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 drgustavoduarte.com</span></div>
             <div class="shot">
-              <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://www.dramanuelamoreira.com.br/" alt="Captura ao vivo do site da Dra. Manuela Moreira" loading="lazy" onerror="this.closest('.shot').classList.add('failed')" />
-              <div class="fallback" style="background:linear-gradient(150deg,#f5efe6,#e7d4bd);color:#6b4a2f">
-                <b>Dra. Manuela Moreira</b>
-                <span>Pré-visualização indisponível — clique em “Visitar site”.</span>
-              </div>
+              <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://www.drgustavoduarte.com/" alt="Site do Dr. Gustavo Duarte" loading="lazy" onerror="this.closest('.shot').classList.add('failed')" />
+              <div class="fallback" style="background:linear-gradient(150deg,#0e2a33,#10454a);color:#dff3f1"><b>Dr. Gustavo Duarte</b><span>Clique para visitar</span></div>
             </div>
           </div>
           <div class="rbody">
-            <div class="niche">Odontologia · Ortodontia / Invisalign</div>
-            <h3>Dra. Manuela Moreira</h3>
-            <p>Studio Lumée, em Recife. Landing minimalista em branco e dourado para captação de pacientes de Invisalign, com antes/depois e foco em discrição e agendamento.</p>
-            <a href="https://www.dramanuelamoreira.com.br/" target="_blank" rel="noopener" class="visit">Visitar site ↗</a>
-          </div>
-        </article>
-
-        <!-- DR. GUSTAVO DUARTE -->
-        <article class="rcard">
-          <div class="browser">
-            <span class="live"><span class="dot"></span> No ar</span>
-            <div class="barr">
-              <i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i>
-              <span class="u">🔒 drgustavoduarte.com</span>
-            </div>
-            <div class="shot">
-              <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://www.drgustavoduarte.com/" alt="Captura ao vivo do site do Dr. Gustavo Duarte" loading="lazy" onerror="this.closest('.shot').classList.add('failed')" />
-              <div class="fallback" style="background:linear-gradient(150deg,#0e2a33,#10454a);color:#dff3f1">
-                <b>Dr. Gustavo Duarte</b>
-                <span>Pré-visualização indisponível — clique em “Visitar site”.</span>
-              </div>
-            </div>
-          </div>
-          <div class="rbody">
-            <div class="niche">Odontologia Estética · Facetas de Resina</div>
+            <div class="niche">Odontologia Estética · Facetas</div>
             <h3>Dr. Gustavo Duarte</h3>
-            <p>Site para odontologia estética com foco em facetas de resina — destaque visual dos resultados, prova social e chamada clara para avaliação.</p>
-            <a href="https://www.drgustavoduarte.com/" target="_blank" rel="noopener" class="visit">Visitar site ↗</a>
+            <p>Odontologia estética com foco em facetas de resina — destaque dos resultados e chamada clara para avaliação.</p>
+            <span class="visit">Visitar site ↗</span>
           </div>
-        </article>
+        </a>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- TRABALHOS -->
-  <section class="sec" id="trabalhos">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="kicker">Demonstrações de versatilidade</div>
-        <h2>Oito nichos, oito identidades.</h2>
-        <p>Além dos clientes acima, criei estas oito landing pages demonstrativas para mostrar repertório em nichos bem diferentes. Clique para abrir cada uma — aqui o conteúdo é fictício, só para demonstração.</p>
-      </div>
-
-      <div class="grid" id="grid">
-
-        <!-- 01 ADVOCACIA -->
-        <a class="card" href="./01-advocacia/index.html">
-          <div class="preview" style="background:linear-gradient(150deg,#0f2a3f,#0a3d3a)">
-            <span class="tag">Jurídico</span>
-            <div class="mini">
-              <span class="chip" style="background:#c9a227;color:#0f2a3f">Mendonça &amp; Vale</span>
-              <div class="bar" style="width:70%;background:#e9d8a6"></div>
-              <div class="bar" style="width:45%;background:rgba(233,216,166,.4)"></div>
-              <div class="big" style="color:#f4ecd2">Você conhece todos os seus direitos?</div>
-              <div class="row"><span class="pill" style="width:90px;background:#c9a227"></span><span class="pill" style="width:60px;background:rgba(255,255,255,.25)"></span></div>
+        <!-- 02 · STUDIO ALINHAR (ORTODONTIA) -->
+        <a class="rcard" href="./09-odontologia/index.html">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 studioalinhar.com.br</span></div>
+            <div class="shot" style="background:linear-gradient(150deg,#faf7f2,#f2ece1)">
+              <div class="mini">
+                <span class="chip" style="background:#1f2a33;color:#fff;letter-spacing:.1em">STUDIO ALINHAR</span>
+                <div class="bar" style="width:60%;background:#c9a45c"></div>
+                <div class="bar" style="width:40%;background:rgba(201,164,92,.4)"></div>
+                <div class="big" style="color:#1f2a33">O sorriso que você merece, discreto.</div>
+                <div class="row"><span class="pill" style="width:96px;background:#c9a45c"></span></div>
+              </div>
             </div>
           </div>
-          <div class="card-body">
+          <div class="rbody">
+            <div class="niche">Odontologia · Invisalign</div>
+            <h3>Studio Alinhar</h3>
+            <p>Clínica de alinhadores invisíveis: captação com planejamento 3D, casos tratados e antes/depois.</p>
+            <span class="visit">Ver projeto ↗</span>
+          </div>
+        </a>
+
+        <!-- 03 · ADVOCACIA -->
+        <a class="rcard" href="./01-advocacia/index.html">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 mendoncaevale.adv.br</span></div>
+            <div class="shot" style="background:linear-gradient(150deg,#0f2a3f,#0a3d3a)">
+              <div class="mini">
+                <span class="chip" style="background:#c9a227;color:#0f2a3f">Mendonça &amp; Vale</span>
+                <div class="bar" style="width:70%;background:#e9d8a6"></div>
+                <div class="bar" style="width:45%;background:rgba(233,216,166,.4)"></div>
+                <div class="big" style="color:#f4ecd2">Você conhece todos os seus direitos?</div>
+                <div class="row"><span class="pill" style="width:90px;background:#c9a227"></span><span class="pill" style="width:60px;background:rgba(255,255,255,.25)"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="rbody">
             <div class="niche">Advocacia · Trabalhista &amp; Família</div>
             <h3>Mendonça &amp; Vale</h3>
-            <p>Sóbrio, institucional e orientado por confiança. Copy educativa, sem urgência agressiva, respeitando o tom do mercado jurídico.</p>
-            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+            <p>Sóbrio e institucional, com copy educativa e sem urgência agressiva.</p>
+            <span class="visit">Ver projeto ↗</span>
           </div>
         </a>
 
-        <!-- 02 FITNESS -->
-        <a class="card" href="./02-fitness/index.html">
-          <div class="preview" style="background:linear-gradient(150deg,#0d0d0f,#18181b)">
-            <span class="tag">Fitness</span>
-            <div class="mini">
-              <span class="chip" style="background:#c6f24e;color:#0d0d0f">FORJA</span>
-              <div class="bar" style="width:75%;background:#c6f24e"></div>
-              <div class="big" style="color:#fff;text-transform:uppercase;font-style:italic">Transforme seu corpo em 12 semanas</div>
-              <div class="row"><span class="pill" style="width:100px;background:#c6f24e"></span><span class="pill" style="width:46px;background:#27272a"></span></div>
+        <!-- 04 · FITNESS -->
+        <a class="rcard" href="./02-fitness/index.html">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 forjapersonal.com.br</span></div>
+            <div class="shot" style="background:linear-gradient(150deg,#0d0d0f,#18181b)">
+              <div class="mini">
+                <span class="chip" style="background:#c6f24e;color:#0d0d0f">FORJA</span>
+                <div class="bar" style="width:75%;background:#c6f24e"></div>
+                <div class="big" style="color:#fff;text-transform:uppercase;font-style:italic">Transforme seu corpo em 12 semanas</div>
+                <div class="row"><span class="pill" style="width:100px;background:#c6f24e"></span><span class="pill" style="width:46px;background:#27272a"></span></div>
+              </div>
             </div>
           </div>
-          <div class="card-body">
+          <div class="rbody">
             <div class="niche">Personal Trainer</div>
             <h3>Forja Personal</h3>
-            <p>Energético e direto ao resultado. Tipografia condensada, contraste alto e urgência saudável com vagas limitadas.</p>
-            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+            <p>Energético e direto ao resultado, com urgência saudável e antes/depois.</p>
+            <span class="visit">Ver projeto ↗</span>
           </div>
         </a>
 
-        <!-- 03 ESTÉTICA -->
-        <a class="card" href="./03-estetica/index.html">
-          <div class="preview" style="background:linear-gradient(150deg,#f7e9e6,#efd7c9)">
-            <span class="tag" style="background:rgba(120,72,60,.55)">Estética</span>
-            <div class="mini">
-              <span class="chip" style="background:#b76e79;color:#fff">Lumière</span>
-              <div class="bar" style="width:60%;background:#b76e79"></div>
-              <div class="bar" style="width:40%;background:rgba(183,110,121,.35)"></div>
-              <div class="big" style="color:#6b4a3f;font-style:italic">Sua beleza, em equilíbrio</div>
-              <div class="row"><span class="pill" style="width:84px;background:#c9a227"></span><span class="pill" style="width:50px;background:rgba(183,110,121,.5)"></span></div>
+        <!-- 05 · ESTÉTICA -->
+        <a class="rcard" href="./03-estetica/index.html">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 lumiereestetica.com.br</span></div>
+            <div class="shot" style="background:linear-gradient(150deg,#f7e9e6,#efd7c9)">
+              <div class="mini">
+                <span class="chip" style="background:#b76e79;color:#fff">Lumière</span>
+                <div class="bar" style="width:60%;background:#b76e79"></div>
+                <div class="bar" style="width:40%;background:rgba(183,110,121,.35)"></div>
+                <div class="big" style="color:#6b4a3f;font-style:italic">Sua beleza, em equilíbrio</div>
+                <div class="row"><span class="pill" style="width:84px;background:#c9a227"></span><span class="pill" style="width:50px;background:rgba(183,110,121,.5)"></span></div>
+              </div>
             </div>
           </div>
-          <div class="card-body">
+          <div class="rbody">
             <div class="niche">Harmonização Facial</div>
             <h3>Lumière Estética</h3>
-            <p>Suave, emocional e elegante. Storytelling de autoestima, paleta rosé/nude e itálicos sofisticados em destaque.</p>
-            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+            <p>Suave, emocional e elegante, com storytelling de autoestima.</p>
+            <span class="visit">Ver projeto ↗</span>
           </div>
         </a>
 
-        <!-- 04 IMÓVEIS -->
-        <a class="card" href="./04-imoveis/index.html">
-          <div class="preview" style="background:linear-gradient(150deg,#0e3a5f,#13507e)">
-            <span class="tag">Imóveis</span>
-            <div class="mini">
-              <span class="chip" style="background:#fff;color:#0e3a5f">Horizonte</span>
-              <div class="big" style="color:#fff">Avaliação gratuita do seu imóvel</div>
-              <div class="row">
-                <span class="pill" style="width:70px;height:34px;background:rgba(255,255,255,.9)"></span>
-                <span class="pill" style="width:70px;height:34px;background:rgba(255,255,255,.5)"></span>
+        <!-- 06 · IMÓVEIS -->
+        <a class="rcard" href="./04-imoveis/index.html">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 horizonteimoveis.com.br</span></div>
+            <div class="shot" style="background:linear-gradient(150deg,#0e3a5f,#13507e)">
+              <div class="mini">
+                <span class="chip" style="background:#fff;color:#0e3a5f">Horizonte</span>
+                <div class="big" style="color:#fff">Avaliação gratuita do seu imóvel</div>
+                <div class="row"><span class="pill" style="width:70px;height:34px;background:rgba(255,255,255,.9)"></span><span class="pill" style="width:70px;height:34px;background:rgba(255,255,255,.5)"></span></div>
+                <div class="row"><span class="pill" style="width:120px;background:#f4a23b"></span></div>
               </div>
-              <div class="row"><span class="pill" style="width:120px;background:#f4a23b"></span></div>
             </div>
           </div>
-          <div class="card-body">
+          <div class="rbody">
             <div class="niche">Corretor de Imóveis</div>
             <h3>Horizonte Imóveis</h3>
-            <p>Direto e focado em lead. Hero forte, características em bullets, formulário curto e prova social de compradores.</p>
-            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+            <p>Direto e focado em lead, com formulário curto e prova social.</p>
+            <span class="visit">Ver projeto ↗</span>
           </div>
         </a>
 
-        <!-- 05 MARKETING -->
-        <a class="card" href="./05-marketing/index.html">
-          <div class="preview" style="background:linear-gradient(150deg,#1b0b3a,#3a0f6b 55%,#b81d72)">
-            <span class="tag">Tráfego Pago</span>
-            <div class="mini">
-              <span class="chip" style="background:#ff3da6;color:#fff">Tração</span>
-              <div class="bar" style="width:80%;background:#fff"></div>
-              <div class="big" style="color:#fff">+212% em vendas em 90 dias</div>
-              <div class="row">
-                <span class="pill" style="width:24px;height:38px;background:#7c3aed"></span>
-                <span class="pill" style="width:24px;height:26px;background:#ff3da6"></span>
-                <span class="pill" style="width:24px;height:44px;background:#22d3ee"></span>
-                <span class="pill" style="width:24px;height:30px;background:#a78bfa"></span>
+        <!-- 07 · MARKETING -->
+        <a class="rcard" href="./05-marketing/index.html">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 tracaoperformance.com.br</span></div>
+            <div class="shot" style="background:linear-gradient(150deg,#1b0b3a,#3a0f6b 55%,#b81d72)">
+              <div class="mini">
+                <span class="chip" style="background:#ff3da6;color:#fff">Tração</span>
+                <div class="bar" style="width:80%;background:#fff"></div>
+                <div class="big" style="color:#fff">+212% em vendas em 90 dias</div>
+                <div class="row"><span class="pill" style="width:24px;height:38px;background:#7c3aed"></span><span class="pill" style="width:24px;height:26px;background:#ff3da6"></span><span class="pill" style="width:24px;height:44px;background:#22d3ee"></span><span class="pill" style="width:24px;height:30px;background:#a78bfa"></span></div>
               </div>
             </div>
           </div>
-          <div class="card-body">
+          <div class="rbody">
             <div class="niche">Agência de Performance</div>
             <h3>Tração Performance</h3>
-            <p>B2B, orientado a dados, estrutura AIDA. Gradientes vibrantes, números em destaque e diagnóstico gratuito como CTA.</p>
-            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+            <p>B2B, orientado a dados, estrutura AIDA com números em destaque.</p>
+            <span class="visit">Ver projeto ↗</span>
           </div>
         </a>
 
-        <!-- 06 PSICOLOGIA -->
-        <a class="card" href="./06-psicologia/index.html">
-          <div class="preview" style="background:linear-gradient(150deg,#dfeae2,#cfe0e6)">
-            <span class="tag" style="background:rgba(60,90,80,.5)">Psicologia</span>
-            <div class="mini">
-              <span class="chip" style="background:#7a9b86;color:#fff">Espaço Sereno</span>
-              <div class="bar" style="width:55%;background:#7a9b86"></div>
-              <div class="bar" style="width:38%;background:rgba(122,155,134,.4)"></div>
-              <div class="big" style="color:#3f5a4d">Pedir ajuda também é força</div>
-              <div class="row"><span class="pill" style="width:96px;background:#7a9b86"></span></div>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="niche">Psicólogo · Terapia</div>
-            <h3>Espaço Sereno</h3>
-            <p>Acolhedor e humano, sem jargão clínico. Muito espaço em branco, tons calmos e um CTA suave para a primeira conversa.</p>
-            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <!-- 07 PET -->
-        <a class="card" href="./07-pet/index.html">
-          <div class="preview" style="background:linear-gradient(150deg,#36c5f0,#5ad1c3 60%,#ffd23f)">
-            <span class="tag" style="background:rgba(20,80,110,.55)">Pet &amp; Vet</span>
-            <div class="mini">
-              <span class="chip" style="background:#fff;color:#1f7aa3">🐾 AuMigo</span>
-              <div class="big" style="color:#fff">Cuidado de quem ama de verdade</div>
-              <div class="row">
-                <span class="pill" style="width:54px;background:#ff8a5c"></span>
-                <span class="pill" style="width:54px;background:#ffd23f"></span>
-                <span class="pill" style="width:54px;background:#fff"></span>
+        <!-- 08 · PSICOLOGIA -->
+        <a class="rcard" href="./06-psicologia/index.html">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 espacosereno.com.br</span></div>
+            <div class="shot" style="background:linear-gradient(150deg,#dfeae2,#cfe0e6)">
+              <div class="mini">
+                <span class="chip" style="background:#7a9b86;color:#fff">Espaço Sereno</span>
+                <div class="bar" style="width:55%;background:#7a9b86"></div>
+                <div class="bar" style="width:38%;background:rgba(122,155,134,.4)"></div>
+                <div class="big" style="color:#3f5a4d">Pedir ajuda também é força</div>
+                <div class="row"><span class="pill" style="width:96px;background:#7a9b86"></span></div>
               </div>
             </div>
           </div>
-          <div class="card-body">
-            <div class="niche">Pet Shop · Veterinária 24h</div>
-            <h3>AuMigo Pet &amp; Vet</h3>
-            <p>Afetuoso e caloroso. Cores amigáveis, ícones de patinhas e foco na confiança de quem ama o animal.</p>
-            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+          <div class="rbody">
+            <div class="niche">Psicólogo · Terapia</div>
+            <h3>Espaço Sereno</h3>
+            <p>Acolhedor e humano, sem jargão clínico, com CTA suave.</p>
+            <span class="visit">Ver projeto ↗</span>
           </div>
         </a>
 
-        <!-- 08 ARQUITETURA -->
-        <a class="card" href="./08-arquitetura/index.html">
-          <div class="preview" style="background:linear-gradient(150deg,#1a1a18,#2b2a27)">
-            <span class="tag">Arquitetura</span>
-            <div class="mini">
-              <span class="chip" style="background:#e7e2d8;color:#1a1a18;letter-spacing:.2em">ÁTRIO</span>
-              <div class="big" style="color:#e7e2d8;font-weight:400;letter-spacing:.02em">Espaços que contam<br>histórias.</div>
-              <div class="row"><span class="pill" style="width:130px;height:8px;background:#9a9488"></span></div>
-              <div class="row"><span class="pill" style="width:70px;height:8px;background:rgba(231,226,216,.4)"></span></div>
+        <!-- 09 · PET -->
+        <a class="rcard" href="./07-pet/index.html">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 aumigopetvet.com.br</span></div>
+            <div class="shot" style="background:linear-gradient(150deg,#36c5f0,#5ad1c3 60%,#ffd23f)">
+              <div class="mini">
+                <span class="chip" style="background:#fff;color:#1f7aa3">🐾 AuMigo</span>
+                <div class="big" style="color:#fff">Cuidado de quem ama de verdade</div>
+                <div class="row"><span class="pill" style="width:54px;background:#ff8a5c"></span><span class="pill" style="width:54px;background:#ffd23f"></span><span class="pill" style="width:54px;background:#fff"></span></div>
+              </div>
             </div>
           </div>
-          <div class="card-body">
+          <div class="rbody">
+            <div class="niche">Pet Shop · Veterinária 24h</div>
+            <h3>AuMigo Pet &amp; Vet</h3>
+            <p>Afetuoso e caloroso, com cores amigáveis e foco na confiança.</p>
+            <span class="visit">Ver projeto ↗</span>
+          </div>
+        </a>
+
+        <!-- 10 · ARQUITETURA -->
+        <a class="rcard" href="./08-arquitetura/index.html">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i><span class="u">🔒 atrioarquitetura.com.br</span></div>
+            <div class="shot" style="background:linear-gradient(150deg,#1a1a18,#2b2a27)">
+              <div class="mini">
+                <span class="chip" style="background:#e7e2d8;color:#1a1a18;letter-spacing:.2em">ÁTRIO</span>
+                <div class="big" style="color:#e7e2d8;font-weight:400;letter-spacing:.02em">Espaços que contam<br>histórias.</div>
+                <div class="row"><span class="pill" style="width:130px;height:8px;background:#9a9488"></span></div>
+                <div class="row"><span class="pill" style="width:70px;height:8px;background:rgba(231,226,216,.4)"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="rbody">
             <div class="niche">Arquitetura &amp; Interiores</div>
             <h3>Átrio Arquitetura</h3>
-            <p>Premium e editorial. Paleta neutra, muito espaço negativo, grid assimétrico de revista e storytelling de transformação.</p>
-            <span class="card-link">Ver landing page <span class="arrow">→</span></span>
+            <p>Premium e editorial, paleta neutra e grid assimétrico de revista.</p>
+            <span class="visit">Ver projeto ↗</span>
           </div>
         </a>
 
@@ -467,7 +456,7 @@
   <div class="wrap foot">
     <div><strong style="color:var(--ink)">Vértice</strong> · Landing pages de alta conversão</div>
     <div class="links">
-      <a href="#trabalhos">Trabalhos</a>
+      <a href="#projetos">Projetos</a>
       <a href="#processo">Como trabalho</a>
       <a href="#contato">Contato</a>
     </div>
