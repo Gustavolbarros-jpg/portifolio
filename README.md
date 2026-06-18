@@ -2,7 +2,7 @@
 
 Vitrine de **8 landing pages de alta conversão**, cada uma em um nicho diferente, com identidade visual, tom de copy e estrutura próprios. O objetivo é demonstrar **versatilidade**: nenhuma página parece template da outra, mesmo sendo todas do mesmo profissional.
 
-> ⚠️ **Todo o conteúdo é fictício** (nomes de negócios, depoimentos, números, telefones, registros profissionais e endereços). As imagens são placeholders carregados de [picsum.photos](https://picsum.photos). Nada representa pessoas, marcas ou resultados reais.
+> ⚠️ **Todo o conteúdo é fictício** (nomes de negócios, depoimentos, números, telefones, registros profissionais e endereços). As imagens são placeholders com o aviso “Insira sua foto aqui”, prontos para serem substituídos pelas fotos reais. Nada representa pessoas, marcas ou resultados reais.
 
 ---
 
@@ -95,4 +95,4 @@ Cada arquivo é editável diretamente. Os pontos mais comuns a trocar:
 - **Número de WhatsApp:** procure por `5500000000000` e substitua pelo número real (formato `55DDDNUMERO`).
 - **E-mails e telefones:** placeholders como `(00) 00000-0000` e `contato@...`.
 - **Nome/marca do freelancer:** no hub (`index.html`), a marca "Vértice" e o contato no rodapé/CTA.
-- **Imagens:** troque as URLs `https://picsum.photos/seed/...` por fotos reais (mantendo proporções) quando houver material do cliente.
+- **Imagens:** cada foto é um placeholder “Insira sua foto aqui” (SVG embutido via `data:` URI). Basta trocar pelo caminho/URL da foto real — no `src` das tags `<img>` e nos `background:url(...)` de CSS dos heros.
