@@ -82,6 +82,31 @@
   .card-link .arrow{transition:transform .2s}
   .card:hover .card-link .arrow{transform:translateX(5px)}
 
+  /* Projetos no ar (clientes reais) */
+  .real .grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .rcard{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+  .rcard:hover{transform:translateY(-6px);border-color:#2b3a55;box-shadow:0 26px 50px -24px rgba(0,0,0,.7)}
+  .browser{position:relative}
+  .browser .barr{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line);background:#0e1526}
+  .browser .barr i{width:10px;height:10px;border-radius:50%;display:block}
+  .browser .barr .u{margin-left:10px;flex:1;height:24px;border-radius:6px;background:#1a2336;color:var(--muted);font-size:.74rem;display:flex;align-items:center;gap:7px;padding:0 12px;overflow:hidden;white-space:nowrap}
+  .browser .shot{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0a0f1d}
+  .browser .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .browser .shot .fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:8px}
+  .browser .shot.failed img{display:none}
+  .browser .shot.failed .fallback{display:flex}
+  .browser .shot .fallback b{font-family:var(--ff-display);font-size:1.2rem}
+  .browser .shot .fallback span{font-size:.85rem;opacity:.85}
+  .rcard .live{position:absolute;top:12px;right:12px;z-index:3;display:inline-flex;align-items:center;gap:7px;background:rgba(11,17,32,.72);backdrop-filter:blur(4px);color:#fff;font-size:.72rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .rcard .live .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.25)}
+  .rcard .rbody{padding:24px;display:flex;flex-direction:column;flex:1}
+  .rcard .niche{color:var(--brand);font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+  .rcard h3{font-size:1.4rem;margin-bottom:8px}
+  .rcard p{color:var(--muted);font-size:.97rem;flex:1}
+  .rcard .visit{margin-top:18px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-display);font-weight:600;border-radius:999px;padding:11px 22px;font-size:.92rem;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b1120;transition:transform .15s,box-shadow .2s;box-shadow:0 8px 24px -10px rgba(56,189,248,.6)}
+  .rcard .visit:hover{transform:translateY(-2px)}
+  @media(max-width:760px){.real .grid2{grid-template-columns:1fr}}
+
   /* Process strip */
   .why{background:var(--bg-soft);border-block:1px solid var(--line)}
   .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px}
@@ -117,7 +142,8 @@
   <div class="wrap nav">
     <a href="#topo" class="logo"><span class="mark">V</span> Vértice</a>
     <nav class="nav-links" id="nav">
-      <a href="#trabalhos">Trabalhos</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#trabalhos">Demonstrações</a>
       <a href="#processo">Como trabalho</a>
       <a href="#contato">Contato</a>
       <a href="#contato" class="btn btn-primary">Quero um orçamento</a>
@@ -133,16 +159,79 @@
     <div class="wrap">
       <span class="eyebrow"><span class="dot"></span> Portfólio de landing pages</span>
       <h1>Landing pages que <span class="grad">convertem</span>, para qualquer nicho.</h1>
-      <p class="lead">Cada projeto abaixo foi desenhado do zero com identidade visual, tom de copy e estrutura próprios. Mesmo profissional por trás — oito resultados que não se parecem.</p>
+      <p class="lead">Sites reais publicados para clientes e demonstrações em nichos variados. Cada projeto é desenhado do zero com identidade visual, tom de copy e estrutura próprios — nada de template reaproveitado.</p>
       <div class="hero-cta">
-        <a href="#trabalhos" class="btn btn-primary">Ver os 8 projetos →</a>
+        <a href="#clientes" class="btn btn-primary">Ver projetos no ar →</a>
         <a href="#contato" class="btn btn-ghost">Falar comigo</a>
       </div>
       <div class="stats">
-        <div class="stat"><div class="num">8</div><div class="lbl">nichos diferentes</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">clientes no ar</div></div>
+        <div class="stat"><div class="num">8</div><div class="lbl">nichos demonstrados</div></div>
         <div class="stat"><div class="num">100%</div><div class="lbl">mobile-first</div></div>
         <div class="stat"><div class="num">1</div><div class="lbl">objetivo por página</div></div>
-        <div class="stat"><div class="num">∞</div><div class="lbl">testes A/B possíveis</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS NO AR (CLIENTES REAIS) -->
+  <section class="sec real" id="clientes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Clientes no ar</div>
+        <h2>Sites reais, publicados e funcionando.</h2>
+        <p>Projetos que desenvolvi para clientes e que estão no ar agora. Clique para visitar cada um e ver o trabalho completo, ao vivo.</p>
+      </div>
+
+      <div class="grid2">
+
+        <!-- DRA. MANUELA MOREIRA -->
+        <article class="rcard">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr">
+              <i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i>
+              <span class="u">🔒 dramanuelamoreira.com.br</span>
+            </div>
+            <div class="shot">
+              <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://www.dramanuelamoreira.com.br/" alt="Captura ao vivo do site da Dra. Manuela Moreira" loading="lazy" onerror="this.closest('.shot').classList.add('failed')" />
+              <div class="fallback" style="background:linear-gradient(150deg,#f5efe6,#e7d4bd);color:#6b4a2f">
+                <b>Dra. Manuela Moreira</b>
+                <span>Pré-visualização indisponível — clique em “Visitar site”.</span>
+              </div>
+            </div>
+          </div>
+          <div class="rbody">
+            <div class="niche">Odontologia · Ortodontia / Invisalign</div>
+            <h3>Dra. Manuela Moreira</h3>
+            <p>Studio Lumée, em Recife. Landing minimalista em branco e dourado para captação de pacientes de Invisalign, com antes/depois e foco em discrição e agendamento.</p>
+            <a href="https://www.dramanuelamoreira.com.br/" target="_blank" rel="noopener" class="visit">Visitar site ↗</a>
+          </div>
+        </article>
+
+        <!-- DR. GUSTAVO DUARTE -->
+        <article class="rcard">
+          <div class="browser">
+            <span class="live"><span class="dot"></span> No ar</span>
+            <div class="barr">
+              <i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i>
+              <span class="u">🔒 drgustavoduarte.com</span>
+            </div>
+            <div class="shot">
+              <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://www.drgustavoduarte.com/" alt="Captura ao vivo do site do Dr. Gustavo Duarte" loading="lazy" onerror="this.closest('.shot').classList.add('failed')" />
+              <div class="fallback" style="background:linear-gradient(150deg,#0e2a33,#10454a);color:#dff3f1">
+                <b>Dr. Gustavo Duarte</b>
+                <span>Pré-visualização indisponível — clique em “Visitar site”.</span>
+              </div>
+            </div>
+          </div>
+          <div class="rbody">
+            <div class="niche">Odontologia Estética · Facetas de Resina</div>
+            <h3>Dr. Gustavo Duarte</h3>
+            <p>Site para odontologia estética com foco em facetas de resina — destaque visual dos resultados, prova social e chamada clara para avaliação.</p>
+            <a href="https://www.drgustavoduarte.com/" target="_blank" rel="noopener" class="visit">Visitar site ↗</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -151,9 +240,9 @@
   <section class="sec" id="trabalhos">
     <div class="wrap">
       <div class="sec-head">
-        <div class="kicker">Trabalhos selecionados</div>
+        <div class="kicker">Demonstrações de versatilidade</div>
         <h2>Oito nichos, oito identidades.</h2>
-        <p>Clique em qualquer card para abrir a landing page completa. Todo o conteúdo — nomes, depoimentos, números — é fictício e serve apenas como demonstração.</p>
+        <p>Além dos clientes acima, criei estas oito landing pages demonstrativas para mostrar repertório em nichos bem diferentes. Clique para abrir cada uma — aqui o conteúdo é fictício, só para demonstração.</p>
       </div>
 
       <div class="grid" id="grid">
